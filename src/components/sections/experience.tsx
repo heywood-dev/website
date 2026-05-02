@@ -16,7 +16,7 @@ const roles: Role[] = [
     title: "Black Wharton Consulting",
     tag: "Strategy & Delivery",
     description:
-      "AI Systems and Customer Delivery Consultant. Built decision systems on top of unstructured operational data and made sure non-technical stakeholders adopted them. Engagements drove $200K in savings, 8 to 12 percent revenue lift, and a 30 percent cut in reporting latency. The work was less about modeling and more about making the model usable to the person doing the job.",
+      "AI Systems and Customer Delivery Consultant. Built decision systems on top of unstructured operational data and made sure non-technical stakeholders adopted them. One Philadelphia restaurant chain came in with strong sales and bleeding margin. I dug into the operational data, found that variable costs and in-unit waste were the actual problem, and built a weekly dashboard that tracked the right metrics across locations and surfaced where the issues were coming from and what to do about it. Across engagements: $200K in savings, 8 to 12 percent revenue lift, and a 30 percent cut in reporting latency. The work was less about modeling and more about making the model usable to the person doing the job.",
   },
   {
     year: "2024",
@@ -31,6 +31,13 @@ const roles: Role[] = [
     tag: "Founding",
     description:
       "Founded and ran a logistics and tutoring business across Jamaica from zero. Owned pricing, routing, hiring, and the service workflow end to end. Built pricing and routing models against real demand patterns. Generated 3 million JMD in revenue and grew unit profitability by 25 percent. The lesson that has stuck: every operational decision should be defensible to the person executing it.",
+  },
+  {
+    year: "2021.2022",
+    title: "William Knibb High School",
+    tag: "Coaching & Mentorship",
+    description:
+      "Assistant Track and Field Coach and Mentor in Trelawny, Jamaica. Designed and ran targeted training programs that lifted the school's national track ranking from 40th to top 15. Worked alongside athletes on academics and college placement, helping mentees secure hundreds of thousands of dollars in scholarships to globally renowned universities. The job was operational and personal at the same time. Build a system that makes the team better, then make sure each athlete gets what they individually need from it.",
   },
   {
     year: "2020",

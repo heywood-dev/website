@@ -27,7 +27,7 @@ const projects: Project[] = [
     tag: "AI / Analytics",
     repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
     description:
-      "AI-powered ops dashboard. Upload a CSV, get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Built to take the moment ops leads spend cleaning spreadsheets and replace it with a clean read on what is actually breaking.",
+      "AI-powered ops dashboard. Upload a CSV, get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
   },
   {
     year: "2025",
@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "Contributor Pipeline Simulation",
     tag: "AI Data Operations",
     description:
-      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams. Pivot-based dashboards surface bottlenecks, batch rejection patterns, and quality gaps. Built to mirror the operational reality of running a labeling or RL environment pipeline at an AI company. This project came directly out of a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup, where I learned what running these pipelines actually looks like in production.",
+      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams. Pivot-based dashboards surface bottlenecks, batch rejection patterns, and quality gaps. Built to mirror the operational reality of running a labeling or RL environment pipeline at an AI company. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup, where I learned what running these pipelines looks like in production.",
   },
   {
     year: "2025",
