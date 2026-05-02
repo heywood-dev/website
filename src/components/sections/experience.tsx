@@ -16,35 +16,35 @@ const roles: Role[] = [
     title: "Black Wharton Consulting",
     tag: "Strategy & Delivery",
     description:
-      "AI Systems and Customer Delivery Consultant. Built decision systems on top of unstructured operational data and made sure non-technical stakeholders adopted them. One Philadelphia restaurant chain came in with strong sales and bleeding margin. I dug into the operational data, found that variable costs and in-unit waste were the actual problem, and built a weekly dashboard that tracked the right metrics across locations and surfaced where the issues were coming from and what to do about it. Across engagements: $200K in savings, 8 to 12 percent revenue lift, and a 30 percent cut in reporting latency. The work was less about modeling and more about making the model usable to the person doing the job.",
+      "AI Systems and Customer Delivery Consultant. Built decision systems on top of unstructured operational data for mid-market clients. For a Philadelphia restaurant chain with strong sales and bleeding margin, identified variable costs and in-unit waste as the actual problem and built a weekly dashboard that surfaced where to look across locations. Across engagements: $200K in client savings, 8 to 12 percent revenue lift, and a 30 percent reduction in reporting latency.",
   },
   {
     year: "2024",
     title: "University of Pennsylvania Residential Operations",
     tag: "BizOps",
     description:
-      "Operations and Data Systems Manager during the summer rollout. Deployed planning systems for daily decisions across a 10,000-resident population. Led the cross-functional rollout, owned the training and documentation, and redesigned KPI tracking to lift accuracy by 20 percent. Operating inside an institution this large taught me that the bottleneck is almost never the model. It is the handoff.",
+      "Operations and Data Systems Manager during the summer rollout. Deployed planning systems for daily decisions across a 10,000-resident population, led the cross-functional rollout including training and documentation, and redesigned KPI tracking to lift accuracy by 20 percent.",
   },
   {
     year: "2021.2022",
     title: "Aureon Ventures",
     tag: "Founding",
     description:
-      "Founded and ran a logistics and tutoring business across Jamaica from zero. Owned pricing, routing, hiring, and the service workflow end to end. Built pricing and routing models against real demand patterns. Generated 3 million JMD in revenue and grew unit profitability by 25 percent. The lesson that has stuck: every operational decision should be defensible to the person executing it.",
+      "Founded and ran a logistics and tutoring business across Jamaica from zero. Owned pricing, routing, hiring, and the service workflow end to end. Built pricing and routing models against real demand patterns. Generated 3 million JMD in revenue and grew unit profitability by 25 percent.",
   },
   {
     year: "2021.2022",
     title: "William Knibb High School",
     tag: "Coaching & Mentorship",
     description:
-      "Assistant Track and Field Coach and Mentor in Trelawny, Jamaica. Designed and ran targeted training programs that lifted the school's national track ranking from 40th to top 15. Worked alongside athletes on academics and college placement, helping mentees secure hundreds of thousands of dollars in scholarships to globally renowned universities. The job was operational and personal at the same time. Build a system that makes the team better, then make sure each athlete gets what they individually need from it.",
+      "Assistant Track and Field Coach and Mentor in Trelawny, Jamaica. Designed and ran targeted training programs that lifted the school's national track ranking from 40th to top 15. Worked alongside athletes on academics and college placement, helping mentees secure hundreds of thousands of dollars in scholarships to universities abroad.",
   },
   {
     year: "2020",
     title: "Everglades Farms (CPO Office)",
     tag: "Strategy",
     description:
-      "Operations Strategy intern reporting into the Chief Product Officer. Mapped workflows to find breakdowns and built decision models for pricing, fulfillment, and demand. The output was used by the operating team, which is the only thing that matters in that kind of seat.",
+      "Operations Strategy intern reporting into the Chief Product Officer. Mapped operational workflows to identify breakdowns and built decision models for pricing, fulfillment, and demand that the operating team adopted directly.",
   },
 ];
 

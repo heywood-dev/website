@@ -19,7 +19,7 @@ const projects: Project[] = [
     tag: "AI / Decision Systems",
     repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
     description:
-      "Agent-based decision system that translates operational datasets into real-time, plain-language diagnostics for non-technical users. Stress-tested across varied datasets to validate behavior under production-like failure modes. The interesting part was not the model. It was making the output trustworthy enough that someone would act on it.",
+      "Agent-based decision system that translates operational datasets into real-time, plain-language diagnostics for non-technical users. Stress-tested across varied datasets to validate behavior under production-like failure modes.",
   },
   {
     year: "2025",
@@ -27,7 +27,7 @@ const projects: Project[] = [
     tag: "AI / Analytics",
     repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
     description:
-      "AI-powered ops dashboard. Upload a CSV, get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
+      "AI-powered ops dashboard. Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
   },
   {
     year: "2025",
@@ -35,7 +35,7 @@ const projects: Project[] = [
     tag: "GTM Automation",
     repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
     description:
-      "Prototype workflow that converts internal product content into LinkedIn and Twitter drafts for GTM teams. The bottleneck on most marketing orgs is not ideas, it is throughput. This shortens the loop between product change and public-facing copy.",
+      "Workflow that converts internal product content into LinkedIn and Twitter drafts for GTM teams. Drop files into a folder, run one script, get reviewable drafts in the team's voice. Built to shorten the loop between product change and public-facing copy.",
   },
   {
     year: "2025",
@@ -43,21 +43,21 @@ const projects: Project[] = [
     tag: "Decision Systems",
     repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
     description:
-      "Consumer repayment risk and payment plan decision support tool built on real lending data. Predictive modeling, business decision insights, and an interactive dashboard. Designed for the constraint that matters most in lending: every call has to hold up under review.",
+      "Consumer repayment risk and payment plan decision support tool built on 2 million-plus loan records. Predictive modeling, segmentation framework, and an interactive dashboard that translates model output into auditable approve, decline, and refer decisions.",
   },
   {
     year: "2025",
     title: "Contributor Pipeline Simulation",
     tag: "AI Data Operations",
     description:
-      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams. Pivot-based dashboards surface bottlenecks, batch rejection patterns, and quality gaps. Built to mirror the operational reality of running a labeling or RL environment pipeline at an AI company. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup, where I learned what running these pipelines looks like in production.",
+      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams. Pivot-based dashboards surface bottlenecks, batch rejection patterns, and quality gaps. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup.",
   },
   {
     year: "2025",
     title: "Handheld Comms Device",
     tag: "Hardware",
     description:
-      "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure I designed in CAD and printed in PLA. End to end from board to firmware to physical product. Most of what I learned was about the tolerances between layers, not the code.",
+      "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure designed in CAD and printed in PLA. End to end from board to firmware to physical product.",
   },
 ];
 
