@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, type Variants } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 interface Role {
   year: string;
@@ -61,62 +60,72 @@ function RoleRow({ role }: { role: Role }) {
 
   return (
     <motion.div
+      layout
       variants={rowVariants}
       className="group relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex items-baseline gap-4 md:gap-8 py-5 border-t border-[#D8D8D2]">
+      <div
+        className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
+        style={{ borderColor: "#D9D2C5" }}
+      >
         <span
-          className="w-16 shrink-0 text-xs text-[#6B6B63] tabular-nums"
-          style={{ fontFamily: "var(--font-mono)" }}
+          className="w-16 shrink-0 text-xs tabular-nums"
+          style={{ fontFamily: "var(--font-mono)", color: "#B8643C" }}
         >
           {role.year}
         </span>
 
         <span
-          className="flex-1 text-lg md:text-xl text-[#0F0F0F] leading-snug transition-colors duration-200 group-hover:text-[#3a3a3a]"
-          style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300 }}
+          className="flex-1 text-lg md:text-xl leading-snug transition-colors duration-200"
+          style={{
+            fontFamily: "var(--font-fraunces)",
+            fontWeight: 300,
+            color: hovered ? "#B8643C" : "#1A1612",
+          }}
         >
           {role.title}
         </span>
 
         <span
-          className="shrink-0 small-caps text-xs text-[#6B6B63] tracking-wider text-right hidden md:block"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="shrink-0 small-caps text-xs tracking-wider text-right hidden md:block"
+          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
         >
           {role.tag}
         </span>
       </div>
 
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-500 ease-out",
-          hovered ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+      <AnimatePresence>
+        {hovered && (
+          <motion.p
+            key="desc"
+            initial={{ opacity: 0, y: 7 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 7 }}
+            transition={{ duration: 0.42, ease: "easeOut" }}
+            className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
+            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+          >
+            {role.description}
+          </motion.p>
         )}
-      >
-        <p
-          className="pb-5 pl-[5.5rem] text-sm text-[#6B6B63] leading-relaxed max-w-[60ch]"
-          style={{ fontFamily: "var(--font-inter)" }}
-        >
-          {role.description}
-        </p>
-      </div>
+      </AnimatePresence>
     </motion.div>
   );
 }
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-36 bg-[#FAFAF7]">
+    <section id="experience" className="py-24 md:py-36" style={{ backgroundColor: "#F5F1EA" }}>
       <div className="mx-auto max-w-4xl px-6 md:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-14 text-xs small-caps tracking-widest text-[#6B6B63]"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="mb-14 text-xs small-caps tracking-widest"
+          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
         >
           Experience
         </motion.h2>
@@ -132,7 +141,7 @@ export function Experience() {
           ))}
         </motion.div>
 
-        <div className="border-t border-[#D8D8D2]" />
+        <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
       </div>
     </section>
   );

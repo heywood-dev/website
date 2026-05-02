@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 
 export function Writing() {
   return (
-    <section id="writing" className="py-24 md:py-36 bg-[#FAFAF7]">
+    <section id="writing" className="py-24 md:py-36" style={{ backgroundColor: "#F5F1EA" }}>
       <div className="mx-auto max-w-4xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-20 items-start">
-          {/* Label column */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -15,14 +14,13 @@ export function Writing() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <h2
-              className="small-caps text-xs tracking-widest text-[#6B6B63]"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="small-caps text-xs tracking-widest"
+              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
             >
               Writing
             </h2>
           </motion.div>
 
-          {/* Content column */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -30,8 +28,8 @@ export function Writing() {
             transition={{ duration: 0.55, ease: "easeOut" }}
           >
             <p
-              className="text-base text-[#6B6B63] leading-relaxed"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="text-base leading-relaxed"
+              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
             >
               More soon.
             </p>

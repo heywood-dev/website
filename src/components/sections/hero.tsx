@@ -3,8 +3,8 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
-const GenerativeMountainScene = dynamic(
-  () => import("@/components/ui/mountain-scene"),
+const TopoLandscape = dynamic(
+  () => import("@/components/ui/topo-landscape"),
   { ssr: false }
 );
 
@@ -12,11 +12,12 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden bg-[#FAFAF7]"
+      className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
+      style={{ backgroundColor: "#F5F1EA" }}
     >
-      {/* Mountain scene — low opacity texture */}
+      {/* Topo contour scene — low opacity texture */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <GenerativeMountainScene />
+        <TopoLandscape />
       </div>
 
       {/* Content */}
@@ -25,30 +26,36 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="leading-none tracking-tight text-[#0F0F0F]"
+          className="leading-none tracking-tight"
           style={{
             fontFamily: "var(--font-fraunces)",
             fontSize: "clamp(3.5rem, 10vw, 9rem)",
             fontWeight: 300,
+            color: "#1A1612",
           }}
         >
-          Devante Heywood
+          Devanté Heywood
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.18 }}
-          className="mt-6 text-base md:text-lg text-[#3a3a3a] max-w-xl"
-          style={{ fontFamily: "var(--font-inter)", letterSpacing: "0.01em" }}
+          className="mt-6 text-base md:text-lg max-w-xl"
+          style={{
+            fontFamily: "var(--font-inter)",
+            letterSpacing: "0.01em",
+            color: "#6B6358",
+          }}
         >
           I build operational systems that non-technical teams actually use.
         </motion.p>
       </div>
 
-      {/* Scroll cue — 1px hairline, no animation */}
+      {/* Scroll cue — 1px hairline */}
       <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 bg-[#D8D8D2]"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12"
+        style={{ backgroundColor: "#D9D2C5" }}
         aria-hidden
       />
     </section>

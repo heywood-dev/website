@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -15,15 +15,31 @@ const inter = Inter({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Devante Heywood",
+  title: "Devanté Heywood",
   description:
     "Operator and systems engineer. Penn SEAS Systems Engineering, May 2026. Targeting Strategy & Ops roles at AI-native startups.",
   openGraph: {
-    title: "Devante Heywood",
+    title: "Devanté Heywood",
     description:
-      "Operator and systems engineer. I turn ambiguity into infrastructure.",
+      "I build operational systems that non-technical teams actually use.",
     type: "website",
+    // TODO: add /public/og.png before final ship, then uncomment:
+    // images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Devanté Heywood",
+    description:
+      "I build operational systems that non-technical teams actually use.",
+    // TODO: uncomment once /public/og.png is added:
+    // images: ["/og.png"],
   },
 };
 
@@ -35,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable}`}
+      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen antialiased">{children}</body>
     </html>

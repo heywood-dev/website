@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FAFAF7;
-  --color-foreground: #0F0F0F;
-  --color-accent: #3a3a3a;
-  --color-hairline: #D8D8D2;
-  --color-muted: #6B6B63;
+  --color-background: #F5F1EA;
+  --color-foreground: #1A1612;
+  --color-accent:     #B8643C;
+  --color-graphite:   #3a3a3a;
+  --color-hairline:   #D9D2C5;
+  --color-muted:      #6B6358;
 
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --font-sans:  var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono:  var(--font-mono), "SFMono-Regular", Consolas, monospace;
 }
 
 :root {
-  --background: #FAFAF7;
-  --foreground: #0F0F0F;
+  --background: #F5F1EA;
+  --foreground: #1A1612;
 }
 
 * {
@@ -33,24 +34,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selection */
-::selection {
-  background-color: #0F0F0F;
-  color: #FAFAF7;
+/* Paper grain texture overlay — barely perceptible, adds warmth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
-/* Small caps utility */
+::selection {
+  background-color: #1A1612;
+  color: #F5F1EA;
+}
+
 .small-caps {
   font-variant: small-caps;
   letter-spacing: 0.08em;
-}
-
-/* Hairline border color */
-.border-hairline {
-  border-color: #D8D8D2;
-}
-
-/* Scroll reveal base — elements start invisible before framer-motion takes over */
-.reveal-target {
-  will-change: opacity, transform;
 }

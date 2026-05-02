@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { Mail } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 
 function LinkedInIcon({ size = 16 }: { size?: number }) {
   return (
@@ -22,25 +22,33 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
   );
 }
 
-// TODO: replace placeholder handles with real values
-const links = [
+type IconComponent = React.ComponentType<{ size?: number; strokeWidth?: number; className?: string; color?: string }>;
+
+const links: { icon: IconComponent; label: string; display: string; href: string; download?: boolean }[] = [
   {
     icon: Mail,
     label: "Email",
-    display: "heywoodd@seas.upenn.edu", // TODO: update to personal/professional email if different
+    display: "heywoodd@seas.upenn.edu",
     href: "mailto:heywoodd@seas.upenn.edu",
   },
   {
     icon: LinkedInIcon,
     label: "LinkedIn",
-    display: "linkedin.com/in/[TODO]", // TODO: add LinkedIn handle
-    href: "https://linkedin.com/in/[TODO]",
+    display: "linkedin.com/in/devanteheywood",
+    href: "https://www.linkedin.com/in/devanteheywood/",
   },
   {
     icon: GitHubIcon,
     label: "GitHub",
-    display: "github.com/[TODO]", // TODO: add GitHub username
-    href: "https://github.com/[TODO]",
+    display: "github.com/heywoodd-cmyk",
+    href: "https://github.com/heywoodd-cmyk",
+  },
+  {
+    icon: FileText,
+    label: "Resume",
+    display: "Resume (PDF)",
+    href: "/resume.pdf",
+    download: true,
   },
 ];
 
@@ -60,10 +68,9 @@ const itemVariants: Variants = {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-36 bg-[#FAFAF7]">
+    <section id="contact" className="py-24 md:py-36" style={{ backgroundColor: "#F5F1EA" }}>
       <div className="mx-auto max-w-4xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-20 items-start">
-          {/* Label column */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,14 +78,13 @@ export function Contact() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <h2
-              className="small-caps text-xs tracking-widest text-[#6B6B63]"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="small-caps text-xs tracking-widest"
+              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
             >
               Contact
             </h2>
           </motion.div>
 
-          {/* Links column */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -86,23 +92,34 @@ export function Contact() {
             viewport={{ once: true, margin: "-60px" }}
             className="space-y-5"
           >
-            {links.map(({ icon: Icon, label, display, href }) => (
+            {links.map(({ icon: Icon, label, display, href, download }) => (
               <motion.a
                 key={label}
                 variants={itemVariants}
                 href={href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
-                rel="noopener noreferrer"
+                target={href.startsWith("mailto") || href.startsWith("/") ? undefined : "_blank"}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                download={download ? true : undefined}
                 className="flex items-center gap-4 group"
               >
-                <Icon
-                  size={16}
-                  className="text-[#6B6B63] group-hover:text-[#0F0F0F] transition-colors duration-200 shrink-0"
-                  strokeWidth={1.5}
-                />
+                <span className="shrink-0 transition-colors duration-200" style={{ color: "#6B6358" }}>
+                  <Icon size={16} strokeWidth={1.5} />
+                </span>
                 <span
-                  className="text-base text-[#0F0F0F] group-hover:text-[#3a3a3a] transition-colors duration-200 border-b border-[#D8D8D2] group-hover:border-[#3a3a3a]"
-                  style={{ fontFamily: "var(--font-inter)" }}
+                  className="text-base transition-colors duration-200 border-b"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    color: "#1A1612",
+                    borderColor: "#D9D2C5",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = "#B8643C";
+                    (e.currentTarget as HTMLElement).style.color = "#B8643C";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = "#D9D2C5";
+                    (e.currentTarget as HTMLElement).style.color = "#1A1612";
+                  }}
                 >
                   {display}
                 </span>
