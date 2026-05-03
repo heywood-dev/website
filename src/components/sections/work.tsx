@@ -14,6 +14,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    year: "2026",
+    title: "AEO Visibility Layer",
+    tag: "AEO / AI Search",
+    repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
+    description:
+      "Measurement layer that tracks brand mention rate, sentiment, and competitor co-appearance across ChatGPT, Claude, and Gemini. Runs 315 scored API calls per sweep, 21 prompts across 3 providers at 5 trials each, and scores every response with Claude using a strict JSON schema. Surfaces findings in per-company reports and a Streamlit dashboard. Built as a v0 of the visibility tooling Petra Labs is developing.",
+  },
+  {
     year: "2025",
     title: "AI Operations Copilot",
     tag: "AI / Decision Systems",
