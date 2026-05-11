@@ -28,6 +28,7 @@ const projects: Project[] = [
     title: "APLD Switching Analysis",
     tag: "Life Sciences Analytics",
     repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
+    demo: "https://apld-switching-analysis.streamlit.app/",
     description:
       "End-to-end Anonymized Patient-Level Data workflow on CMS Medicare claims for a Type 2 Diabetes brand team. Mapped 6,813 T2D patients across drug-class transitions, comorbidity profiles, and switching patterns to surface the addressable opportunity for field force action. Headline finding: 33 percent of the cohort is on sulfonylureas while carrying CVD or CKD, the analog of the modern should-be-on-GLP-1-but-isn't pattern. Ships as a 3-slide deck, an analyst brief, and a re-sliceable Streamlit tool.",
   },
