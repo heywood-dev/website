@@ -15,11 +15,19 @@ interface Project {
 const projects: Project[] = [
   {
     year: "2026",
+    title: "APLD Switching Analysis",
+    tag: "Life Sciences Analytics",
+    repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
+    description:
+      "End-to-end Anonymized Patient-Level Data workflow on CMS Medicare claims for a Type 2 Diabetes brand team. Mapped 6,813 T2D patients across drug-class transitions, comorbidity profiles, and switching patterns to surface the addressable opportunity for field force action. Headline finding: 33 percent of the cohort is on sulfonylureas while carrying CVD or CKD, the analog of the modern should-be-on-GLP-1-but-isn't pattern. Ships as a 3-slide deck, an analyst brief, and a re-sliceable Streamlit tool.",
+  },
+  {
+    year: "2026",
     title: "AEO Visibility Layer",
     tag: "AEO / AI Search",
     repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
     description:
-      "Measurement layer that tracks brand mention rate, sentiment, and competitor co-appearance across ChatGPT, Claude, and Gemini. Runs 315 scored API calls per sweep, 21 prompts across 3 providers at 5 trials each, and scores every response with Claude using a strict JSON schema. Surfaces findings in per-company reports and a Streamlit dashboard. Built as a v0 of the visibility tooling Petra Labs is developing.",
+      "Measurement layer that tracks brand mention rate, sentiment, and competitor co-appearance across ChatGPT, Claude, and Gemini. Runs 315 scored API calls per sweep, 21 prompts across 3 providers at 5 trials each, scored against a strict JSON schema. Outputs per-company reports and a Streamlit dashboard. Built for GTM teams running AEO programs that need a real read on how their brand reads inside the AI surfaces customers now use to make buying decisions.",
   },
   {
     year: "2025",
