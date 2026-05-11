@@ -4,12 +4,22 @@ import { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
+function GitHubIcon({ size = 12 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S9 17.44 9 18v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  );
+}
+
 interface Project {
   year: string;
   title: string;
   tag: string;
   description: string;
   repo?: string;
+  demo?: string;
 }
 
 const projects: Project[] = [
@@ -26,6 +36,7 @@ const projects: Project[] = [
     title: "AEO Visibility Layer",
     tag: "AEO / AI Search",
     repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
+    demo: "https://aeo-visibility-diff.streamlit.app",
     description:
       "Measurement layer that tracks brand mention rate, sentiment, and competitor co-appearance across ChatGPT, Claude, and Gemini. Runs 315 scored API calls per sweep, 21 prompts across 3 providers at 5 trials each, scored against a strict JSON schema. Outputs per-company reports and a Streamlit dashboard. Built for GTM teams running AEO programs that need a real read on how their brand reads inside the AI surfaces customers now use to make buying decisions.",
   },
@@ -42,6 +53,7 @@ const projects: Project[] = [
     title: "Ops Intelligence Dashboard",
     tag: "AI / Analytics",
     repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
+    demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
     description:
       "AI-powered ops dashboard. Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
   },
@@ -115,7 +127,7 @@ function ProjectRow({ project }: { project: Project }) {
           {project.year}
         </span>
 
-        {/* Title + optional repo link */}
+        {/* Title + optional repo and demo links */}
         <span className="flex-1 flex items-baseline gap-2">
           <span
             className="text-lg md:text-xl leading-snug transition-colors duration-200"
@@ -134,13 +146,25 @@ function ProjectRow({ project }: { project: Project }) {
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              style={{ color: "#B8643C" }}
               aria-label={`${project.title} on GitHub`}
+              title="View source on GitHub"
             >
-              <ExternalLink
-                size={12}
-                strokeWidth={1.5}
-                style={{ color: "#B8643C" }}
-              />
+              <GitHubIcon size={13} />
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              style={{ color: "#B8643C" }}
+              aria-label={`${project.title} live demo`}
+              title="Open live app"
+            >
+              <ExternalLink size={13} strokeWidth={1.5} />
             </a>
           )}
         </span>
