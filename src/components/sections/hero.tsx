@@ -15,7 +15,7 @@ export function Hero() {
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
       style={{ backgroundColor: "#F5F1EA" }}
     >
-      {/* Topo contour scene — low opacity texture */}
+      {/* Topo contour scene, low opacity texture */}
       <div className="absolute inset-0 z-0 opacity-40">
         <TopoLandscape />
       </div>
@@ -52,7 +52,7 @@ export function Hero() {
         </motion.p>
       </div>
 
-      {/* Scroll cue — 1px hairline */}
+      {/* Scroll cue, 1px hairline */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12"
         style={{ backgroundColor: "#D9D2C5" }}

@@ -20,88 +20,118 @@ interface Project {
   description: string;
   repo?: string;
   demo?: string;
+  flagship?: boolean;
 }
 
-const projects: Project[] = [
+interface Group {
+  name: string;
+  projects: Project[];
+}
+
+const groups: Group[] = [
   {
-    year: "2026",
-    title: "Launch Readiness Checker",
-    tag: "Ad Tech / Campaign QA",
-    repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
-    demo: "https://launch-readiness-checker.vercel.app",
-    description:
-      "Campaign-QA tool that validates checkout-offer configurations before they go live. A deterministic rule engine catches pacing leaks, brand-safety conflicts, and missing creative at the transaction moment, with a Claude-powered explanation pass layered on top. Includes a configurable impact model that translates each finding into a modeled dollar or impression estimate, with every assumption editable in the UI. Built for ad-network operations teams that need a fast read on what would break if a campaign shipped right now.",
+    name: "AI Ops & Workflow",
+    projects: [
+      {
+        year: "2025",
+        title: "Ops Intelligence Dashboard",
+        tag: "AI / Analytics",
+        repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
+        demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
+        flagship: true,
+        description:
+          "Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
+      },
+      {
+        year: "2026",
+        title: "Launch Readiness Checker",
+        tag: "Revenue Ops",
+        repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
+        demo: "https://launch-readiness-checker.vercel.app",
+        flagship: true,
+        description:
+          "Validates checkout-offer configurations before they go live, catching pacing leaks, brand-safety conflicts, and missing creative at the transaction moment. Built to show how an ad-network operations team catches these failures automatically rather than after the spend.",
+      },
+      {
+        year: "2025",
+        title: "AI Operations Copilot",
+        tag: "AI / Decision Systems",
+        repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
+        description:
+          "Agent-based decision system that turns operational datasets into real-time, plain-language diagnostics for non-technical users, stress-tested across varied datasets for production-like failure modes.",
+      },
+      {
+        year: "2025",
+        title: "AI Content Workflow Bot",
+        tag: "GTM Automation",
+        repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
+        description:
+          "Converts internal product content into reviewable LinkedIn and Twitter drafts in the team's voice. One command in, structured drafts out, shortening the loop between product change and public-facing copy.",
+      },
+    ],
   },
   {
-    year: "2026",
-    title: "APLD Switching Analysis",
-    tag: "Life Sciences Analytics",
-    repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
-    demo: "https://apld-switching-analysis.streamlit.app/",
-    description:
-      "End-to-end Anonymized Patient-Level Data workflow on CMS Medicare claims for a Type 2 Diabetes brand team. Mapped 6,813 T2D patients across drug-class transitions, comorbidity profiles, and switching patterns to surface the addressable opportunity for field force action. Headline finding: 33 percent of the cohort is on sulfonylureas while carrying CVD or CKD, the analog of the modern should-be-on-GLP-1-but-isn't pattern. Ships as a 3-slide deck, an analyst brief, and a re-sliceable Streamlit tool.",
+    name: "Decision Systems & Analytics",
+    projects: [
+      {
+        year: "2026",
+        title: "APLD Switching Analysis",
+        tag: "Healthcare Analytics",
+        repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
+        demo: "https://apld-switching-analysis.streamlit.app/",
+        flagship: true,
+        description:
+          "An end-to-end anonymized patient-level data workflow on real CMS Medicare claims, built for a Type 2 Diabetes brand team. Maps prescription fills to drug classes, derives comorbidity profiles, and quantifies treatment discordance. The headline: a third of the on-therapy cohort is on a regimen their cardiac or kidney profile argues against. Ships as a three-slide insight deck plus a parametric Streamlit tool, so the brand team can re-slice by age, state, or comorbidity without rebuilding the analysis. The analysis is the work. The tool is so the work doesn't have to be redone every time the question shifts.",
+      },
+      {
+        year: "2025",
+        title: "Repayment Risk Simulator",
+        tag: "Decision Systems",
+        repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
+        description:
+          "Consumer repayment risk and decision-support tool built on 2 million-plus loan records. Predictive modeling, segmentation, and an interactive dashboard that turns model output into auditable approve, decline, and refer decisions.",
+      },
+      {
+        year: "2025",
+        title: "Contributor Pipeline Simulation",
+        tag: "AI Data Operations",
+        description:
+          "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams, with dashboards that surface bottlenecks and batch rejection patterns. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup.",
+      },
+    ],
   },
   {
-    year: "2026",
-    title: "AEO Visibility Layer",
-    tag: "AEO / AI Search",
-    repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
-    demo: "https://aeo-visibility-diff.streamlit.app",
-    description:
-      "Measurement layer that tracks brand mention rate, sentiment, and competitor co-appearance across ChatGPT, Claude, and Gemini. Runs 315 scored API calls per sweep, 21 prompts across 3 providers at 5 trials each, scored against a strict JSON schema. Outputs per-company reports and a Streamlit dashboard. Built for GTM teams running AEO programs that need a real read on how their brand reads inside the AI surfaces customers now use to make buying decisions.",
+    name: "Growth & GTM",
+    projects: [
+      {
+        year: "2026",
+        title: "AEO Visibility Layer",
+        tag: "Growth Analytics",
+        repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
+        demo: "https://aeo-visibility-diff.streamlit.app",
+        flagship: true,
+        description:
+          "A measurement layer for answer-engine optimization that quantifies how a company surfaces across ChatGPT, Claude, and Gemini. Runs real API calls against each model and diffs visibility between them. A working v0 for an emerging problem: being found inside AI-generated answers, not just search results.",
+      },
+    ],
   },
   {
-    year: "2025",
-    title: "AI Operations Copilot",
-    tag: "AI / Decision Systems",
-    repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
-    description:
-      "Agent-based decision system that translates operational datasets into real-time, plain-language diagnostics for non-technical users. Stress-tested across varied datasets to validate behavior under production-like failure modes.",
-  },
-  {
-    year: "2025",
-    title: "Ops Intelligence Dashboard",
-    tag: "AI / Analytics",
-    repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
-    demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
-    description:
-      "AI-powered ops dashboard. Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
-  },
-  {
-    year: "2025",
-    title: "AI Content Workflow Bot",
-    tag: "GTM Automation",
-    repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
-    description:
-      "Workflow that converts internal product content into LinkedIn and Twitter drafts for GTM teams. Drop files into a folder, run one script, get reviewable drafts in the team's voice. Built to shorten the loop between product change and public-facing copy.",
-  },
-  {
-    year: "2025",
-    title: "Repayment Risk Simulator",
-    tag: "Decision Systems",
-    repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
-    description:
-      "Consumer repayment risk and payment plan decision support tool built on 2 million-plus loan records. Predictive modeling, segmentation framework, and an interactive dashboard that translates model output into auditable approve, decline, and refer decisions.",
-  },
-  {
-    year: "2025",
-    title: "Contributor Pipeline Simulation",
-    tag: "AI Data Operations",
-    description:
-      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams. Pivot-based dashboards surface bottlenecks, batch rejection patterns, and quality gaps. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup.",
-  },
-  {
-    year: "2025",
-    title: "Handheld Comms Device",
-    tag: "Hardware",
-    description:
-      "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure designed in CAD and printed in PLA. End to end from board to firmware to physical product.",
+    name: "Hardware",
+    projects: [
+      {
+        year: "2025",
+        title: "Handheld Comms Device",
+        tag: "Hardware",
+        description:
+          "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure designed in CAD and printed in PLA. End to end from board to firmware to physical product.",
+      },
+    ],
   },
 ];
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.07 } },
+  visible: { transition: { staggerChildren: 0.05 } },
 };
 
 const rowVariants: Variants = {
@@ -115,6 +145,7 @@ const rowVariants: Variants = {
 
 function ProjectRow({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false);
+  const accent = hovered ? "#B8643C" : "#6B6358";
 
   return (
     <motion.div
@@ -124,20 +155,17 @@ function ProjectRow({ project }: { project: Project }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* TODO: project image — add hover thumbnail here */}
       <div
         className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
         style={{ borderColor: "#D9D2C5" }}
       >
-        {/* Year */}
         <span
-          className="w-10 shrink-0 text-xs tabular-nums"
-          style={{ fontFamily: "var(--font-mono)", color: "#B8643C" }}
+          className="w-16 shrink-0 text-xs tabular-nums"
+          style={{ fontFamily: "var(--font-mono)", color: "#6B6358" }}
         >
           {project.year}
         </span>
 
-        {/* Title + optional repo and demo links */}
         <span className="flex-1 flex items-baseline gap-2">
           <span
             className="text-lg md:text-xl leading-snug transition-colors duration-200"
@@ -155,8 +183,8 @@ function ProjectRow({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-              style={{ color: "#B8643C" }}
+              className="shrink-0 transition-colors duration-200"
+              style={{ color: accent }}
               aria-label={`${project.title} on GitHub`}
               title="View source on GitHub"
             >
@@ -169,8 +197,8 @@ function ProjectRow({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-              style={{ color: "#B8643C" }}
+              className="shrink-0 transition-colors duration-200"
+              style={{ color: accent }}
               aria-label={`${project.title} live demo`}
               title="Open live app"
             >
@@ -179,7 +207,6 @@ function ProjectRow({ project }: { project: Project }) {
           )}
         </span>
 
-        {/* Tag */}
         <span
           className="shrink-0 small-caps text-xs tracking-wider text-right hidden md:block"
           style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
@@ -188,53 +215,74 @@ function ProjectRow({ project }: { project: Project }) {
         </span>
       </div>
 
-      {/* Hover description — rises 7px on appear */}
-      <AnimatePresence>
-        {hovered && (
-          <motion.p
-            key="desc"
-            initial={{ opacity: 0, y: 7 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 7 }}
-            transition={{ duration: 0.42, ease: "easeOut" }}
-            className="pb-5 pl-14 text-sm leading-relaxed max-w-[60ch]"
-            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
-          >
-            {project.description}
-          </motion.p>
-        )}
-      </AnimatePresence>
+      {project.flagship ? (
+        <p
+          className="pb-6 pl-20 text-sm leading-relaxed max-w-[60ch]"
+          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+        >
+          {project.description}
+        </p>
+      ) : (
+        <AnimatePresence>
+          {hovered && (
+            <motion.p
+              key="desc"
+              initial={{ opacity: 0, y: 7 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 7 }}
+              transition={{ duration: 0.42, ease: "easeOut" }}
+              className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
+              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+            >
+              {project.description}
+            </motion.p>
+          )}
+        </AnimatePresence>
+      )}
     </motion.div>
   );
 }
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-36" style={{ backgroundColor: "#F5F1EA" }}>
-      <div className="mx-auto max-w-4xl px-6 md:px-12">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-14 text-xs small-caps tracking-widest"
-          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
-        >
-          Projects
-        </motion.h2>
+    <section id="projects" className="py-32 md:py-48" style={{ backgroundColor: "#F5F1EA" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12">
+        <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="small-caps text-xs tracking-widest"
+            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+          >
+            Projects
+          </motion.h2>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          {projects.map((p) => (
-            <ProjectRow key={p.title} project={p} />
-          ))}
-        </motion.div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            {groups.map((group, idx) => (
+              <div key={group.name} className={idx > 0 ? "mt-14 md:mt-20" : ""}>
+                <motion.h3
+                  variants={rowVariants}
+                  className="mb-4 small-caps text-xs tracking-widest"
+                  style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+                >
+                  {group.name}
+                </motion.h3>
+                {group.projects.map((p) => (
+                  <ProjectRow key={p.title} project={p} />
+                ))}
+              </div>
+            ))}
 
-        <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
+            <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-// Writing index — add entries here as essays are published.
+// Writing index. Add entries here as essays are published.
 // Each essay lives at src/app/writing/[slug]/page.mdx
 // Export metadata from each .mdx file: title, date (ISO string), description
 

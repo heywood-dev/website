@@ -12,39 +12,39 @@ interface Role {
 
 const roles: Role[] = [
   {
-    year: "2023.2025",
+    year: "2023–2025",
     title: "Black Wharton Consulting",
     tag: "Strategy & Delivery",
     description:
-      "AI Systems and Customer Delivery Consultant. Built decision systems on top of unstructured operational data for mid-market clients. For a Philadelphia restaurant chain with strong sales and bleeding margin, identified variable costs and in-unit waste as the actual problem and built a weekly dashboard that surfaced where to look across locations. Across engagements: $200K in client savings, 8 to 12 percent revenue lift, and a 30 percent reduction in reporting latency.",
+      "Built decision systems on top of unstructured operational data for mid-market clients and drove adoption with non-technical teams. For a Philadelphia restaurant chain running strong sales but bleeding margin, traced the problem to variable costs and in-unit waste, then shipped a weekly dashboard that surfaced where to look across locations. Across engagements: $200K in client savings, 8 to 12 percent revenue lift, and a 30 percent reduction in reporting latency.",
   },
   {
     year: "2024",
     title: "University of Pennsylvania Residential Operations",
     tag: "BizOps",
     description:
-      "Operations and Data Systems Manager during the summer rollout. Deployed planning systems for daily decisions across a 10,000-resident population, led the cross-functional rollout including training and documentation, and redesigned KPI tracking to lift accuracy by 20 percent.",
+      "Ran operations and data systems for a 10,000-resident population. Deployed the planning systems behind daily allocation decisions, led the cross-functional rollout including training and documentation, and redesigned KPI tracking to lift accuracy by 20 percent.",
   },
   {
-    year: "2021.2022",
+    year: "2021–2022",
     title: "Aureon Ventures",
     tag: "Founding",
     description:
-      "Founded and ran a logistics and tutoring business across Jamaica from zero. Owned pricing, routing, hiring, and the service workflow end to end. Built pricing and routing models against real demand patterns. Generated 3 million JMD in revenue and grew unit profitability by 25 percent.",
+      "Founded and ran a logistics and tutoring business across Jamaica from zero. Owned pricing, routing, hiring, and the service workflow end to end, building pricing and routing models against real demand. Generated 3 million JMD in revenue and grew unit profitability by 25 percent.",
   },
   {
-    year: "2021.2022",
+    year: "2021–2022",
     title: "William Knibb High School",
     tag: "Coaching & Mentorship",
     description:
-      "Assistant Track and Field Coach and Mentor in Trelawny, Jamaica. Designed and ran targeted training programs that lifted the school's national track ranking from 40th to top 15. Worked alongside athletes on academics and college placement, helping mentees secure hundreds of thousands of dollars in scholarships to universities abroad.",
+      "Assistant Track and Field Coach and Mentor in Trelawny, Jamaica. Designed the training programs that lifted the school's national ranking from 40th to top 15, and worked alongside athletes on academics and placement, helping mentees secure hundreds of thousands of dollars in scholarships to universities abroad.",
   },
   {
     year: "2020",
     title: "Everglades Farms (CPO Office)",
     tag: "Strategy",
     description:
-      "Operations Strategy intern reporting into the Chief Product Officer. Mapped operational workflows to identify breakdowns and built decision models for pricing, fulfillment, and demand that the operating team adopted directly.",
+      "Operations Strategy intern reporting into the Chief Product Officer. Mapped operational workflows to find breakdowns and built decision models for pricing, fulfillment, and demand that the operating team put into use.",
   },
 ];
 
@@ -79,7 +79,7 @@ function RoleRow({ role }: { role: Role }) {
       >
         <span
           className="w-16 shrink-0 text-xs tabular-nums"
-          style={{ fontFamily: "var(--font-mono)", color: "#B8643C" }}
+          style={{ fontFamily: "var(--font-mono)", color: "#6B6358" }}
         >
           {role.year}
         </span>
@@ -124,31 +124,32 @@ function RoleRow({ role }: { role: Role }) {
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-36" style={{ backgroundColor: "#F5F1EA" }}>
-      <div className="mx-auto max-w-4xl px-6 md:px-12">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-14 text-xs small-caps tracking-widest"
-          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
-        >
-          Experience
-        </motion.h2>
+    <section id="experience" className="py-32 md:py-48" style={{ backgroundColor: "#F5F1EA" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12">
+        <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="small-caps text-xs tracking-widest"
+            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+          >
+            Experience
+          </motion.h2>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          {roles.map((r) => (
-            <RoleRow key={r.title} role={r} />
-          ))}
-        </motion.div>
-
-        <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            {roles.map((r) => (
+              <RoleRow key={r.title + r.year} role={r} />
+            ))}
+            <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

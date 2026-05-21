@@ -98,16 +98,16 @@ const fragmentShader = `
     float warp = exp(-dist * dist * 5.0) * 0.18;
     if (dist > 0.001) uva += normalize(toMouse) * warp;
 
-    // Multi-octave noise — slow drift
+    // Multi-octave noise. Slow drift.
     float n = 0.0;
     n += snoise(vec3(uva * 2.2, time * 0.05)) * 0.55;
     n += snoise(vec3(uva * 4.5, time * 0.035)) * 0.30;
     n += snoise(vec3(uva * 9.0, time * 0.06))  * 0.15;
 
-    // Lift to 0–1
+    // Lift to 0 to 1
     float h = clamp(n * 0.5 + 0.5, 0.0, 1.0);
 
-    // Contour bands — thin lines at each level boundary
+    // Contour bands. Thin lines at each level boundary.
     float numBands = 14.0;
     float band = fract(h * numBands);
     float lineWidth = 0.06;
