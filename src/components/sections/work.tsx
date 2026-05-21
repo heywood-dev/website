@@ -25,6 +25,15 @@ interface Project {
 const projects: Project[] = [
   {
     year: "2026",
+    title: "Launch Readiness Checker",
+    tag: "Ad Tech / Campaign QA",
+    repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
+    demo: "https://launch-readiness-checker.vercel.app",
+    description:
+      "Campaign-QA tool that validates checkout-offer configurations before they go live. A deterministic rule engine catches pacing leaks, brand-safety conflicts, and missing creative at the transaction moment, with a Claude-powered explanation pass layered on top. Includes a configurable impact model that translates each finding into a modeled dollar or impression estimate, with every assumption editable in the UI. Built for ad-network operations teams that need a fast read on what would break if a campaign shipped right now.",
+  },
+  {
+    year: "2026",
     title: "APLD Switching Analysis",
     tag: "Life Sciences Analytics",
     repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
