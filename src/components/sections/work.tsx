@@ -20,118 +20,97 @@ interface Project {
   description: string;
   repo?: string;
   demo?: string;
-  flagship?: boolean;
 }
 
-interface Group {
-  name: string;
-  projects: Project[];
-}
-
-const groups: Group[] = [
+const projects: Project[] = [
   {
-    name: "AI Ops & Workflow",
-    projects: [
-      {
-        year: "2025",
-        title: "Ops Intelligence Dashboard",
-        tag: "AI / Analytics",
-        repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
-        demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
-        flagship: true,
-        description:
-          "Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
-      },
-      {
-        year: "2026",
-        title: "Launch Readiness Checker",
-        tag: "Revenue Ops",
-        repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
-        demo: "https://launch-readiness-checker.vercel.app",
-        flagship: true,
-        description:
-          "Validates checkout-offer configurations before they go live, catching pacing leaks, brand-safety conflicts, and missing creative at the transaction moment. Built to show how an ad-network operations team catches these failures automatically rather than after the spend.",
-      },
-      {
-        year: "2025",
-        title: "AI Operations Copilot",
-        tag: "AI / Decision Systems",
-        repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
-        description:
-          "Agent-based decision system that turns operational datasets into real-time, plain-language diagnostics for non-technical users, stress-tested across varied datasets for production-like failure modes.",
-      },
-      {
-        year: "2025",
-        title: "AI Content Workflow Bot",
-        tag: "GTM Automation",
-        repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
-        description:
-          "Converts internal product content into reviewable LinkedIn and Twitter drafts in the team's voice. One command in, structured drafts out, shortening the loop between product change and public-facing copy.",
-      },
-    ],
+    year: "2026",
+    title: "Modal Pricing Analyzer",
+    tag: "Pricing Strategy",
+    repo: "https://github.com/heywoodd-cmyk/modal-pricing-analyzer",
+    demo: "https://modal-pricing-analyzer.streamlit.app/",
+    description:
+      "Streamlit tool for modeling serverless GPU pricing. Configure a workload and see cost per job against the production multipliers, region and guaranteed-execution stacking, that quietly push a $1,000 estimate past $6,000. Plots the breakeven against reserved instances, which lands near 50 to 65 percent utilization for H100-class GPUs, and adds packaging notes on where per-second billing is a moat and where it drives churn.",
   },
   {
-    name: "Decision Systems & Analytics",
-    projects: [
-      {
-        year: "2026",
-        title: "APLD Switching Analysis",
-        tag: "Healthcare Analytics",
-        repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
-        demo: "https://apld-switching-analysis.streamlit.app/",
-        flagship: true,
-        description:
-          "An end-to-end anonymized patient-level data workflow on real CMS Medicare claims, built for a Type 2 Diabetes brand team. Maps prescription fills to drug classes, derives comorbidity profiles, and quantifies treatment discordance. The headline: a third of the on-therapy cohort is on a regimen their cardiac or kidney profile argues against. Ships as a three-slide insight deck plus a parametric Streamlit tool, so the brand team can re-slice by age, state, or comorbidity without rebuilding the analysis. The analysis is the work. The tool is so the work doesn't have to be redone every time the question shifts.",
-      },
-      {
-        year: "2025",
-        title: "Repayment Risk Simulator",
-        tag: "Decision Systems",
-        repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
-        description:
-          "Consumer repayment risk and decision-support tool built on 2 million-plus loan records. Predictive modeling, segmentation, and an interactive dashboard that turns model output into auditable approve, decline, and refer decisions.",
-      },
-      {
-        year: "2025",
-        title: "Contributor Pipeline Simulation",
-        tag: "AI Data Operations",
-        description:
-          "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams, with dashboards that surface bottlenecks and batch rejection patterns. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup.",
-      },
-    ],
+    year: "2026",
+    title: "Launch Readiness Checker",
+    tag: "Revenue Ops",
+    repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
+    demo: "https://launch-readiness-checker.vercel.app",
+    description:
+      "Validates checkout-offer configurations before they go live, catching pacing leaks, brand-safety conflicts, and missing creative at the transaction moment. Built to show how an ad-network operations team catches these failures automatically rather than after the spend.",
   },
   {
-    name: "Growth & GTM",
-    projects: [
-      {
-        year: "2026",
-        title: "AEO Visibility Layer",
-        tag: "Growth Analytics",
-        repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
-        demo: "https://aeo-visibility-diff.streamlit.app",
-        flagship: true,
-        description:
-          "A measurement layer for answer-engine optimization that quantifies how a company surfaces across ChatGPT, Claude, and Gemini. Runs real API calls against each model and diffs visibility between them. A working v0 for an emerging problem: being found inside AI-generated answers, not just search results.",
-      },
-    ],
+    year: "2026",
+    title: "APLD Switching Analysis",
+    tag: "Healthcare Analytics",
+    repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
+    demo: "https://apld-switching-analysis.streamlit.app/",
+    description:
+      "An end-to-end anonymized patient-level data workflow on real CMS Medicare claims, built for a Type 2 Diabetes brand team. Maps prescription fills to drug classes, derives comorbidity profiles, and quantifies treatment discordance. The headline: a third of the on-therapy cohort is on a regimen their cardiac or kidney profile argues against. Ships as a three-slide insight deck plus a parametric Streamlit tool, so the brand team can re-slice by age, state, or comorbidity without rebuilding the analysis.",
   },
   {
-    name: "Hardware",
-    projects: [
-      {
-        year: "2025",
-        title: "Handheld Comms Device",
-        tag: "Hardware",
-        description:
-          "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure designed in CAD and printed in PLA. End to end from board to firmware to physical product.",
-      },
-    ],
+    year: "2026",
+    title: "AEO Visibility Layer",
+    tag: "Growth Analytics",
+    repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
+    demo: "https://aeo-visibility-diff.streamlit.app",
+    description:
+      "A measurement layer for answer-engine optimization that quantifies how a company surfaces across ChatGPT, Claude, and Gemini. Runs real API calls against each model and diffs visibility between them. A working v0 for an emerging problem: being found inside AI-generated answers, not just search results.",
+  },
+  {
+    year: "2025",
+    title: "Ops Intelligence Dashboard",
+    tag: "AI / Analytics",
+    repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
+    demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
+    description:
+      "Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
+  },
+  {
+    year: "2025",
+    title: "AI Operations Copilot",
+    tag: "AI / Decision Systems",
+    repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
+    description:
+      "Agent-based decision system that turns operational datasets into real-time, plain-language diagnostics for non-technical users, stress-tested across varied datasets for production-like failure modes.",
+  },
+  {
+    year: "2025",
+    title: "AI Content Workflow Bot",
+    tag: "GTM Automation",
+    repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
+    description:
+      "Converts internal product content into reviewable LinkedIn and Twitter drafts in the team's voice. One command in, structured drafts out, shortening the loop between product change and public-facing copy.",
+  },
+  {
+    year: "2025",
+    title: "Repayment Risk Simulator",
+    tag: "Decision Systems",
+    repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
+    description:
+      "Consumer repayment risk and decision-support tool built on 2 million-plus loan records. Predictive modeling, segmentation, and an interactive dashboard that turns model output into auditable approve, decline, and refer decisions.",
+  },
+  {
+    year: "2025",
+    title: "Contributor Pipeline Simulation",
+    tag: "AI Data Operations",
+    description:
+      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams, with dashboards that surface bottlenecks and batch rejection patterns. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup.",
+  },
+  {
+    year: "2025",
+    title: "Handheld Comms Device",
+    tag: "Hardware",
+    description:
+      "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure designed in CAD and printed in PLA. End to end from board to firmware to physical product.",
   },
 ];
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 };
 
 const rowVariants: Variants = {
@@ -215,30 +194,21 @@ function ProjectRow({ project }: { project: Project }) {
         </span>
       </div>
 
-      {project.flagship ? (
-        <p
-          className="pb-6 pl-20 text-sm leading-relaxed max-w-[60ch]"
-          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
-        >
-          {project.description}
-        </p>
-      ) : (
-        <AnimatePresence>
-          {hovered && (
-            <motion.p
-              key="desc"
-              initial={{ opacity: 0, y: 7 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 7 }}
-              transition={{ duration: 0.42, ease: "easeOut" }}
-              className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
-              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
-            >
-              {project.description}
-            </motion.p>
-          )}
-        </AnimatePresence>
-      )}
+      <AnimatePresence>
+        {hovered && (
+          <motion.p
+            key="desc"
+            initial={{ opacity: 0, y: 7 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 7 }}
+            transition={{ duration: 0.42, ease: "easeOut" }}
+            className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
+            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+          >
+            {project.description}
+          </motion.p>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -265,21 +235,9 @@ export function Projects() {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
           >
-            {groups.map((group, idx) => (
-              <div key={group.name} className={idx > 0 ? "mt-14 md:mt-20" : ""}>
-                <motion.h3
-                  variants={rowVariants}
-                  className="mb-4 small-caps text-xs tracking-widest"
-                  style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
-                >
-                  {group.name}
-                </motion.h3>
-                {group.projects.map((p) => (
-                  <ProjectRow key={p.title} project={p} />
-                ))}
-              </div>
+            {projects.map((p) => (
+              <ProjectRow key={p.title} project={p} />
             ))}
-
             <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
           </motion.div>
         </div>
