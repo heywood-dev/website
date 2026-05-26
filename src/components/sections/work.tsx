@@ -28,7 +28,7 @@ const projects: Project[] = [
     title: "Modal Pricing Analyzer",
     tag: "Pricing Strategy",
     repo: "https://github.com/heywoodd-cmyk/modal-pricing-analyzer",
-    demo: "https://modal-pricing-analyzer.streamlit.app/",
+    demo: "https://modal-pricing-analyzerr.streamlit.app/",
     description:
       "Streamlit tool for modeling serverless GPU pricing. Configure a workload and see cost per job against the production multipliers, region and guaranteed-execution stacking, that quietly push a $1,000 estimate past $6,000. Plots the breakeven against reserved instances, which lands near 50 to 65 percent utilization for H100-class GPUs, and adds packaging notes on where per-second billing is a moat and where it drives churn.",
   },
