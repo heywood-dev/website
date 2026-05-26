@@ -30,7 +30,7 @@ const projects: Project[] = [
     repo: "https://github.com/heywoodd-cmyk/modal-pricing-analyzer",
     demo: "https://modal-pricing-analyzerr.streamlit.app/",
     description:
-      "Streamlit tool for modeling serverless GPU pricing. Configure a workload and see cost per job against the production multipliers, region and guaranteed-execution stacking, that quietly push a $1,000 estimate past $6,000. Plots the breakeven against reserved instances, which lands near 50 to 65 percent utilization for H100-class GPUs, and adds packaging notes on where per-second billing is a moat and where it drives churn.",
+      "Models what running AI workloads on Modal's pay-per-second GPU service actually costs in production. Plug in a workload and see how the production multipliers can quietly turn a $1,000 estimate into a $6,000 bill, plus where pay-per-second wins against renting servers outright and where it stops being cheaper.",
   },
   {
     year: "2026",
@@ -39,7 +39,7 @@ const projects: Project[] = [
     repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
     demo: "https://launch-readiness-checker.vercel.app",
     description:
-      "Validates checkout-offer configurations before they go live, catching pacing leaks, brand-safety conflicts, and missing creative at the transaction moment. Built to show how an ad-network operations team catches these failures automatically rather than after the spend.",
+      "Catches the expensive mistakes in an ad campaign before it goes live: the misconfigured offers, the brand-safety conflicts, the missing creative, right at the moment money is about to be spent. Built to show how an operations team could catch these automatically instead of discovering them after the budget is gone.",
   },
   {
     year: "2026",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
     demo: "https://apld-switching-analysis.streamlit.app/",
     description:
-      "An end-to-end anonymized patient-level data workflow on real CMS Medicare claims, built for a Type 2 Diabetes brand team. Maps prescription fills to drug classes, derives comorbidity profiles, and quantifies treatment discordance. The headline: a third of the on-therapy cohort is on a regimen their cardiac or kidney profile argues against. Ships as a three-slide insight deck plus a parametric Streamlit tool, so the brand team can re-slice by age, state, or comorbidity without rebuilding the analysis.",
+      "A tool that digs through real Medicare prescription data to answer a question a pharma team actually has: which patients are on the wrong medication for their condition, and how many. The answer here was striking. Roughly a third of the group was on a drug their heart or kidney history argues against. It ships as a short insight deck plus a live tool the team can re-filter by age, state, or condition on their own, so the analysis never has to be rebuilt from scratch when the question shifts.",
   },
   {
     year: "2026",
@@ -57,7 +57,7 @@ const projects: Project[] = [
     repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
     demo: "https://aeo-visibility-diff.streamlit.app",
     description:
-      "A measurement layer for answer-engine optimization that quantifies how a company surfaces across ChatGPT, Claude, and Gemini. Runs real API calls against each model and diffs visibility between them. A working v0 for an emerging problem: being found inside AI-generated answers, not just search results.",
+      "Measures how often a company shows up when people ask AI assistants like ChatGPT, Claude, and Gemini for recommendations. It runs real questions across all three and compares the results. An early take on a problem every company is about to care about: being found inside AI answers, not just Google.",
   },
   {
     year: "2025",
@@ -66,7 +66,7 @@ const projects: Project[] = [
     repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
     demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
     description:
-      "Upload a CSV and get bottleneck analysis, overdue patterns, and workload imbalance surfaced in seconds. Replaces the hours ops leads spend cleaning spreadsheets with a clean read on what is actually breaking.",
+      "Upload a messy spreadsheet and get back a clear read on what's actually slowing the team down: where work is piling up, what's overdue, who's overloaded. It turns the hours an ops lead spends cleaning data into a few seconds of clarity.",
   },
   {
     year: "2025",
@@ -74,7 +74,7 @@ const projects: Project[] = [
     tag: "AI / Decision Systems",
     repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
     description:
-      "Agent-based decision system that turns operational datasets into real-time, plain-language diagnostics for non-technical users, stress-tested across varied datasets for production-like failure modes.",
+      "Turns raw operational data into plain-language read-outs a non-technical team can act on, tested hard to make sure it holds up when the data gets weird.",
   },
   {
     year: "2025",
@@ -82,7 +82,7 @@ const projects: Project[] = [
     tag: "GTM Automation",
     repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
     description:
-      "Converts internal product content into reviewable LinkedIn and Twitter drafts in the team's voice. One command in, structured drafts out, shortening the loop between product change and public-facing copy.",
+      "Turns internal product updates into ready-to-post LinkedIn and Twitter drafts in the team's voice. One command, finished drafts, less time between a product change and the world hearing about it.",
   },
   {
     year: "2025",
@@ -90,21 +90,21 @@ const projects: Project[] = [
     tag: "Decision Systems",
     repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
     description:
-      "Consumer repayment risk and decision-support tool built on 2 million-plus loan records. Predictive modeling, segmentation, and an interactive dashboard that turns model output into auditable approve, decline, and refer decisions.",
+      "Built on two million real loan records, it flags which borrowers are likely to struggle to repay and turns that into clear approve, decline, or review decisions that hold up when someone checks the work.",
   },
   {
     year: "2025",
     title: "Contributor Pipeline Simulation",
     tag: "AI Data Operations",
     description:
-      "Five-scenario simulation modeling contributor throughput, acceptance rates, and quality failures across teams, with dashboards that surface bottlenecks and batch rejection patterns. Built during a deep-stage interview process for a Strategic Projects Lead role at an a16z-backed AI startup.",
+      "Models how work flows through a large team: where it gets stuck, where quality slips, where things get rejected in batches. Built during a late-stage interview process for a strategic role at an a16z-backed AI startup.",
   },
   {
     year: "2025",
     title: "Handheld Comms Device",
     tag: "Hardware",
     description:
-      "Raspberry Pi Pico W, OLED display, RF receiver, and a custom snap-fit enclosure designed in CAD and printed in PLA. End to end from board to firmware to physical product.",
+      "A working handheld communication device I built end to end, from the circuit board and firmware to a custom 3D-printed case. Most of the lesson was in the physical fit, not the code.",
   },
 ];
 

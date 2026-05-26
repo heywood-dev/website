@@ -44,10 +44,7 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
             >
-              I&apos;m a Systems Engineer trained at Penn, with a concentration in AI
-              and Data Analytics. I work across consulting, business operations, and
-              founding, and the through-line is the same in each: take messy operational
-              data and turn it into something a team can actually use to make decisions.
+              Find the break. Build the fix. Make sure it gets used.
             </motion.p>
 
             <motion.p
@@ -55,10 +52,10 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
             >
-              The way I work is simple. I find where a system breaks down, build the
-              thing that fixes the right part of it, and make sure the people doing the
-              job will actually use it. I ship fast and I learn faster. The projects
-              below are that instinct applied across different domains.
+              That&apos;s the whole job. I&apos;ve done it as a consultant, an operator,
+              and a founder, and prototyped well past that, across industries that look
+              nothing alike on the surface and exactly alike underneath. Messy data goes
+              in. A decision someone can actually make comes out.
             </motion.p>
 
             <motion.p
@@ -66,7 +63,8 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
             >
-              I want to work at the intersection of client, product, and operations.
+              I ship fast and I learn faster. I want to work at the intersection of
+              client, product, and operations.
             </motion.p>
           </motion.div>
         </div>

@@ -3,8 +3,8 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
-const TopoLandscape = dynamic(
-  () => import("@/components/ui/topo-landscape"),
+const ParticleField = dynamic(
+  () => import("@/components/ui/particle-field"),
   { ssr: false }
 );
 
@@ -15,9 +15,9 @@ export function Hero() {
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
       style={{ backgroundColor: "#F5F1EA" }}
     >
-      {/* Topo contour scene, low opacity texture */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <TopoLandscape />
+      {/* Particle field. Graphite particles drifting in a torus knot, mouse-repulsion. */}
+      <div className="absolute inset-0 z-0">
+        <ParticleField />
       </div>
 
       {/* Content */}

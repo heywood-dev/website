@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Devanté Heywood",
   description:
-    "Operator and systems engineer. Penn SEAS Systems Engineering, May 2026. Targeting Strategy & Ops roles at AI-native startups.",
+    "Operator and systems engineer. I build operational systems that non-technical teams actually use.",
   openGraph: {
     title: "Devanté Heywood",
     description:
