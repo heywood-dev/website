@@ -27,6 +27,15 @@ interface Project {
 const projects: Project[] = [
   {
     year: "2026",
+    title: "Arphie Customer Health",
+    tag: "Customer Success",
+    repo: "https://github.com/heywoodd-cmyk/arphie-customer-health",
+    demo: "https://arphie-customer-health.vercel.app",
+    description:
+      "A customer-health dashboard for Arphie, the AI platform that automates RFP and security-questionnaire responses. Scores 14 accounts live across product usage, sentiment, and contract signals, then surfaces who's thriving, who's at risk, and why. Built so a small CS team can spot churn risk before the renewal call, not after.",
+  },
+  {
+    year: "2026",
     title: "Modal Pricing Analyzer",
     tag: "Pricing Strategy",
     repo: "https://github.com/heywoodd-cmyk/modal-pricing-analyzer",
