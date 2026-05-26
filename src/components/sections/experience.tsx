@@ -124,7 +124,7 @@ function RoleRow({ role }: { role: Role }) {
 
 export function Experience() {
   return (
-    <section id="experience" className="py-32 md:py-48" style={{ backgroundColor: "#F5F1EA" }}>
+    <section id="experience" className="py-32 md:py-48">
       <div className="mx-auto max-w-5xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2

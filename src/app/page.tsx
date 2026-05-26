@@ -23,7 +23,7 @@ export default function Home() {
         <Contact />
         <footer
           className="border-t py-8"
-          style={{ borderColor: "#D9D2C5", backgroundColor: "#F5F1EA" }}
+          style={{ borderColor: "#D9D2C5" }}
         >
           <div className="mx-auto max-w-4xl px-6 md:px-12 flex items-center justify-between">
             <span

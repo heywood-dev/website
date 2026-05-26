@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { PaperRippleBg } from "@/components/ui/paper-ripple-bg";
+import { Cursor } from "@/components/ui/cursor";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -30,16 +32,12 @@ export const metadata: Metadata = {
     description:
       "I build operational systems that non-technical teams actually use.",
     type: "website",
-    // TODO: add /public/og.png before final ship, then uncomment:
-    // images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Devanté Heywood",
     description:
       "I build operational systems that non-technical teams actually use.",
-    // TODO: uncomment once /public/og.png is added:
-    // images: ["/og.png"],
   },
 };
 
@@ -53,7 +51,11 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <PaperRippleBg />
+        <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
+        <Cursor />
+      </body>
     </html>
   );
 }

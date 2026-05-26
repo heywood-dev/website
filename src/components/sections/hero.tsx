@@ -1,24 +1,23 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-
-const ParticleField = dynamic(
-  () => import("@/components/ui/particle-field"),
-  { ssr: false }
-);
 
 export function Hero() {
   return (
     <section
       id="hero"
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
-      style={{ backgroundColor: "#F5F1EA" }}
     >
-      {/* Particle field. Graphite particles drifting in a torus knot, mouse-repulsion. */}
-      <div className="absolute inset-0 z-0">
-        <ParticleField />
-      </div>
+      {/* Soft radial scrim. Paper color fades to transparent so the ripple shows around,
+          but the hero name and positioning line stay crisp at center. */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        aria-hidden
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 50% at center, rgba(245, 241, 234, 0.92) 0%, rgba(245, 241, 234, 0.78) 35%, rgba(245, 241, 234, 0) 75%)",
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
@@ -45,7 +44,7 @@ export function Hero() {
           style={{
             fontFamily: "var(--font-inter)",
             letterSpacing: "0.01em",
-            color: "#6B6358",
+            color: "#1A1612",
           }}
         >
           I build operational systems that non-technical teams actually use.

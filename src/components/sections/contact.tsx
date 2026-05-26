@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import { Mail, FileText } from "lucide-react";
+import { Magnetic } from "@/components/ui/magnetic";
 
 function LinkedInIcon({ size = 16 }: { size?: number }) {
   return (
@@ -68,7 +69,7 @@ const itemVariants: Variants = {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-32 md:py-48" style={{ backgroundColor: "#F5F1EA" }}>
+    <section id="contact" className="py-32 md:py-48">
       <div className="mx-auto max-w-5xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
@@ -93,15 +94,15 @@ export function Contact() {
             className="space-y-5"
           >
             {links.map(({ icon: Icon, label, display, href, download }) => (
-              <motion.a
-                key={label}
-                variants={itemVariants}
-                href={href}
-                target={href.startsWith("mailto") || href.startsWith("/") ? undefined : "_blank"}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                download={download ? true : undefined}
-                className="flex items-center gap-4 group"
-              >
+              <motion.div key={label} variants={itemVariants}>
+                <Magnetic as="div" strength={0.2} radius={80}>
+                  <a
+                    href={href}
+                    target={href.startsWith("mailto") || href.startsWith("/") ? undefined : "_blank"}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    download={download ? true : undefined}
+                    className="flex items-center gap-4 group w-fit"
+                  >
                 <span className="shrink-0 transition-colors duration-200" style={{ color: "#6B6358" }}>
                   <Icon size={16} strokeWidth={1.5} />
                 </span>
@@ -123,7 +124,9 @@ export function Contact() {
                 >
                   {display}
                 </span>
-              </motion.a>
+                  </a>
+                </Magnetic>
+              </motion.div>
             ))}
           </motion.div>
         </div>

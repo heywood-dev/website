@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, AnimatePresence, useMotionValue, useSpring, type Variants } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { Magnetic } from "@/components/ui/magnetic";
+import { useIsTouch, useReducedMotion } from "@/hooks/use-interaction-prefs";
 
 function GitHubIcon({ size = 12 }: { size?: number }) {
   return (
@@ -126,14 +128,54 @@ function ProjectRow({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false);
   const accent = hovered ? "#B8643C" : "#6B6358";
 
+  const rowRef = useRef<HTMLDivElement>(null);
+  const rx = useMotionValue(0);
+  const ry = useMotionValue(0);
+  const sx = useSpring(rx, { stiffness: 240, damping: 22, mass: 0.4 });
+  const sy = useSpring(ry, { stiffness: 240, damping: 22, mass: 0.4 });
+
+  const reduceMotion = useReducedMotion();
+  const isTouch = useIsTouch();
+  const tiltEnabled = !reduceMotion && !isTouch;
+
+  const onMove = (e: React.MouseEvent) => {
+    if (!tiltEnabled) return;
+    const el = rowRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;  // 0-1
+    const py = (e.clientY - rect.top) / rect.height;  // 0-1
+    rx.set((py - 0.5) * -8); // max ~4 deg in either direction
+    ry.set((px - 0.5) * 10); // slightly more on Y axis (wider rows)
+  };
+
+  const onLeave = () => {
+    setHovered(false);
+    if (tiltEnabled) {
+      rx.set(0);
+      ry.set(0);
+    }
+  };
+
   return (
     <motion.div
       layout
+      ref={rowRef}
       variants={rowVariants}
       className="group relative"
+      data-interactive
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseLeave={onLeave}
+      onMouseMove={onMove}
+      style={tiltEnabled ? { perspective: "1200px" } : undefined}
     >
+      <motion.div
+        style={
+          tiltEnabled
+            ? { rotateX: sx, rotateY: sy, transformStyle: "preserve-3d" }
+            : undefined
+        }
+      >
       <div
         className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
         style={{ borderColor: "#D9D2C5" }}
@@ -146,16 +188,18 @@ function ProjectRow({ project }: { project: Project }) {
         </span>
 
         <span className="flex-1 flex items-baseline gap-2">
-          <span
-            className="text-lg md:text-xl leading-snug transition-colors duration-200"
-            style={{
-              fontFamily: "var(--font-fraunces)",
-              fontWeight: 300,
-              color: hovered ? "#B8643C" : "#1A1612",
-            }}
-          >
-            {project.title}
-          </span>
+          <Magnetic strength={0.15} radius={55}>
+            <span
+              className="text-lg md:text-xl leading-snug transition-colors duration-200"
+              style={{
+                fontFamily: "var(--font-fraunces)",
+                fontWeight: 300,
+                color: hovered ? "#B8643C" : "#1A1612",
+              }}
+            >
+              {project.title}
+            </span>
+          </Magnetic>
           {project.repo && (
             <a
               href={project.repo}
@@ -209,13 +253,14 @@ function ProjectRow({ project }: { project: Project }) {
           </motion.p>
         )}
       </AnimatePresence>
+      </motion.div>
     </motion.div>
   );
 }
 
 export function Projects() {
   return (
-    <section id="projects" className="py-32 md:py-48" style={{ backgroundColor: "#F5F1EA" }}>
+    <section id="projects" className="py-32 md:py-48">
       <div className="mx-auto max-w-5xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2

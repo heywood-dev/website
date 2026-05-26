@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Magnetic } from "@/components/ui/magnetic";
 
 const links = [
   { label: "Experience", href: "#experience" },
@@ -30,15 +31,17 @@ export function Nav() {
       <ul className="flex items-center gap-5 md:gap-7">
         {links.map(({ label, href }) => (
           <li key={href}>
-            <a
-              href={href}
-              className="small-caps text-xs tracking-widest transition-colors duration-200"
-              style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#B8643C"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#1A1612"; }}
-            >
-              {label}
-            </a>
+            <Magnetic strength={0.3} radius={60}>
+              <a
+                href={href}
+                className="small-caps text-xs tracking-widest transition-colors duration-200"
+                style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#B8643C"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#1A1612"; }}
+              >
+                {label}
+              </a>
+            </Magnetic>
           </li>
         ))}
       </ul>
