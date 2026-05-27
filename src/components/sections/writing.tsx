@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Writing() {
   return (
     <section id="writing" className="py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+      <div className="mx-auto max-w-5xl px-6 md:px-12" data-glass-target>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -15,7 +15,7 @@ export function Writing() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               Writing
             </h2>
@@ -29,7 +29,7 @@ export function Writing() {
           >
             <p
               className="text-base leading-relaxed"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               More soon.
             </p>

@@ -69,7 +69,7 @@ const itemVariants: Variants = {
 export function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+      <div className="mx-auto max-w-5xl px-6 md:px-12" data-glass-target>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -79,7 +79,7 @@ export function Contact() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               Contact
             </h2>
@@ -101,23 +101,23 @@ export function Contact() {
                     rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     className="flex items-center gap-4 group w-fit"
                   >
-                <span className="shrink-0 transition-colors duration-200" style={{ color: "#6B6B66" }}>
+                <span className="shrink-0 transition-colors duration-200" style={{ color: "var(--muted)" }}>
                   <Icon size={16} strokeWidth={1.5} />
                 </span>
                 <span
                   className="text-base transition-colors duration-200 border-b"
                   style={{
                     fontFamily: "var(--font-sans)",
-                    color: "#1A1A18",
-                    borderColor: "rgba(0, 0, 0, 0.12)",
+                    color: "var(--foreground)",
+                    borderColor: "var(--hairline)",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "#B8643C";
-                    (e.currentTarget as HTMLElement).style.color = "#B8643C";
+                    (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
+                    (e.currentTarget as HTMLElement).style.color = "var(--accent)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(0, 0, 0, 0.12)";
-                    (e.currentTarget as HTMLElement).style.color = "#1A1A18";
+                    (e.currentTarget as HTMLElement).style.borderColor = "var(--hairline)";
+                    (e.currentTarget as HTMLElement).style.color = "var(--foreground)";
                   }}
                 >
                   {display}

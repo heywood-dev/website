@@ -8,12 +8,42 @@ import { Writing } from "@/components/sections/writing";
 import { Education } from "@/components/sections/education";
 import { Contact } from "@/components/sections/contact";
 
-export default function Home() {
+export const WARM_CREAM_SHADER = [
+  "hsl(36, 18%, 90%)",
+  "hsl(34, 16%, 84%)",
+  "hsl(32, 14%, 78%)",
+  "hsl(38, 18%, 88%)",
+];
+
+interface PreviewShellProps {
+  variant: "a" | "b" | "c";
+  shaderColors?: string[];
+  label: string;
+  blurb: string;
+}
+
+export function PreviewShell({ variant, shaderColors, label, blurb }: PreviewShellProps) {
   return (
-    <>
+    <div data-variant={variant}>
+      {/* Variant tag — sits top-left so you know which preview you're looking at. */}
+      <div
+        className="fixed top-4 left-4 z-[70] px-3 py-1 rounded-md text-xs"
+        style={{
+          fontFamily: "var(--font-sans)",
+          backgroundColor: "rgba(255, 250, 240, 0.7)",
+          backdropFilter: "blur(8px)",
+          color: "var(--foreground)",
+          border: "1px solid var(--hairline)",
+        }}
+      >
+        <span className="small-caps tracking-widest">{label}</span>
+        <span style={{ marginLeft: "0.5rem", color: "var(--muted)" }}>·</span>
+        <span style={{ marginLeft: "0.5rem", color: "var(--muted)" }}>{blurb}</span>
+      </div>
+
       <Nav />
       <main>
-        <Hero />
+        <Hero shaderColors={shaderColors} />
         <About />
         <Experience />
         <Projects />
@@ -41,6 +71,6 @@ export default function Home() {
           </div>
         </footer>
       </main>
-    </>
+    </div>
   );
 }

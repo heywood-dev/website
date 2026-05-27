@@ -9,7 +9,14 @@ const Warp = dynamic(
   { ssr: false }
 );
 
-const SHADER_PROPS = {
+const DEFAULT_COLORS = [
+  "hsl(40, 6%, 92%)",
+  "hsl(40, 6%, 85%)",
+  "hsl(40, 5%, 78%)",
+  "hsl(40, 6%, 88%)",
+];
+
+const BASE_PROPS = {
   proportion: 0.45,
   softness: 1,
   distortion: 0.25,
@@ -20,20 +27,17 @@ const SHADER_PROPS = {
   scale: 1,
   rotation: 0,
   speed: 0.6,
-  colors: [
-    "hsl(40, 6%, 92%)",
-    "hsl(40, 6%, 85%)",
-    "hsl(40, 5%, 78%)",
-    "hsl(40, 6%, 88%)",
-  ],
 };
+
+interface HeroWarpProps {
+  colors?: string[];
+}
 
 /**
  * Hero-scoped Warp shader. Renders absolute inside the hero element so it
- * cannot bleed below. Returns null under prefers-reduced-motion so the
- * static body background takes over.
+ * cannot bleed below. Returns null under prefers-reduced-motion.
  */
-export function HeroWarp() {
+export function HeroWarp({ colors = DEFAULT_COLORS }: HeroWarpProps) {
   const [mounted, setMounted] = useState(false);
   const reduceMotion = useReducedMotion();
 
@@ -48,7 +52,7 @@ export function HeroWarp() {
       style={{ zIndex: 0 }}
       aria-hidden
     >
-      <Warp style={{ height: "100%", width: "100%" }} {...SHADER_PROPS} />
+      <Warp style={{ height: "100%", width: "100%" }} {...BASE_PROPS} colors={colors} />
     </div>
   );
 }

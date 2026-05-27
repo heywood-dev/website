@@ -3,26 +3,28 @@
 import { motion } from "framer-motion";
 import { HeroWarp } from "@/components/ui/warp-background";
 
-export function Hero() {
+interface HeroProps {
+  shaderColors?: string[];
+}
+
+export function Hero({ shaderColors }: HeroProps) {
   return (
     <section
       id="hero"
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
     >
-      {/* Hero-scoped Warp shader. */}
-      <HeroWarp />
+      <HeroWarp colors={shaderColors} />
 
-      {/* Soft light radial scrim behind hero text. */}
+      {/* Soft radial scrim behind hero text. */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse 65% 50% at center, rgba(236, 236, 232, 0.5) 0%, rgba(236, 236, 232, 0.25) 35%, rgba(236, 236, 232, 0) 78%)",
+            "radial-gradient(ellipse 65% 50% at center, var(--scrim) 0%, color-mix(in srgb, var(--scrim) 50%, transparent) 35%, transparent 78%)",
         }}
       />
 
-      {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
@@ -33,7 +35,7 @@ export function Hero() {
             fontFamily: "var(--font-fraunces)",
             fontSize: "clamp(3.5rem, 10vw, 9rem)",
             fontWeight: 300,
-            color: "#1A1A18",
+            color: "var(--foreground)",
           }}
         >
           Devanté Heywood
@@ -47,27 +49,26 @@ export function Hero() {
           style={{
             fontFamily: "var(--font-sans)",
             letterSpacing: "0.01em",
-            color: "#1A1A18",
+            color: "var(--foreground)",
           }}
         >
-          I build operational systems that non-technical teams actually use.
+          I build operational systems that non-technical teams{" "}
+          <span className="accent-emph">actually</span> use.
         </motion.p>
       </div>
 
-      {/* Scroll cue, 1px hairline */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 z-10"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
         aria-hidden
       />
 
-      {/* Soft fade where the hero shader meets the static body. ~96-112px. */}
       <div
         className="absolute bottom-0 left-0 right-0 h-24 md:h-28 z-[5] pointer-events-none"
         aria-hidden
         style={{
           background:
-            "linear-gradient(to bottom, rgba(236, 236, 232, 0) 0%, #ECECE8 100%)",
+            "linear-gradient(to bottom, transparent 0%, var(--background) 100%)",
         }}
       />
     </section>

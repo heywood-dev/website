@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Athletics() {
   return (
     <section id="athletics" className="py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+      <div className="mx-auto max-w-5xl px-6 md:px-12" data-glass-target>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -15,7 +15,7 @@ export function Athletics() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               Athletics
             </h2>
@@ -29,7 +29,7 @@ export function Athletics() {
           >
             <p
               className="text-lg md:text-xl leading-snug max-w-[52ch]"
-              style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300, color: "#1A1A18" }}
+              style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300, color: "var(--foreground)" }}
             >
               Participated at the highest levels of the sport, including a national
               age-group{" "}

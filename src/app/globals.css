@@ -13,10 +13,61 @@
   --font-mono:  var(--font-mono), "SFMono-Regular", Consolas, monospace;
 }
 
+/* Default palette (matches the current main-branch look). */
 :root {
   --background: #ECECE8;
   --foreground: #1A1A18;
+  --muted:      #6B6B66;
+  --accent:     #B8643C;
+  --hairline:   rgba(0, 0, 0, 0.12);
+  --bg-grad-top:    #F2F2EE;
+  --bg-grad-bottom: #E5E5E1;
+  --scrim:      rgba(236, 236, 232, 0.5);
   --font-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Preview variants A, B, C share a warm cream palette. */
+[data-variant="a"],
+[data-variant="b"],
+[data-variant="c"] {
+  --background: #F2EDE2;
+  --foreground: #1F1B16;
+  --muted:      #6E6558;
+  --accent:     #B26E3C;
+  --hairline:   rgba(31, 27, 22, 0.14);
+  --bg-grad-top:    #F5F1E6;
+  --bg-grad-bottom: #EDE8DC;
+  --scrim:      rgba(242, 237, 226, 0.55);
+}
+
+[data-variant="a"],
+[data-variant="b"],
+[data-variant="c"] {
+  background-color: var(--background);
+  background-image: radial-gradient(ellipse at 50% 0%, var(--bg-grad-top) 0%, var(--bg-grad-bottom) 70%);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+/* Italic serif emphasis for variants A and B (none for C or default). */
+[data-variant="a"] .accent-emph,
+[data-variant="b"] .accent-emph {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Liquid-glass panels for variant B only. Targets the inner content div
+   of each content section, never the hero. */
+[data-variant="b"] [data-glass-target] {
+  backdrop-filter: blur(20px) saturate(1.1);
+  -webkit-backdrop-filter: blur(20px) saturate(1.1);
+  background: rgba(255, 250, 240, 0.4);
+  border: 1px solid rgba(255, 250, 240, 0.5);
+  border-radius: 16px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 8px 24px -16px rgba(31, 27, 22, 0.12);
 }
 
 * {
