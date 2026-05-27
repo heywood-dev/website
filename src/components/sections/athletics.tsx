@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export function Athletics() {
   return (
@@ -39,6 +40,7 @@ export function Athletics() {
                 className="inline-link"
               >
                 national age-group record
+                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
               </a>{" "}
               in Jamaica that has{" "}
               <a
@@ -48,6 +50,7 @@ export function Athletics() {
                 className="inline-link"
               >
                 stood for over a decade
+                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
               </a>
               , and a{" "}
               <a
@@ -57,6 +60,7 @@ export function Athletics() {
                 className="inline-link"
               >
                 program-history relay finish
+                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
               </a>{" "}
               for Penn at the Penn Relays.
             </p>
