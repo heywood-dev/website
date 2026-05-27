@@ -69,7 +69,7 @@ const itemVariants: Variants = {
 export function Contact() {
   return (
     <section id="contact" className="py-12 md:py-20">
-      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(12, 12, 12, 0.80) 0%, rgba(12, 12, 12, 0.78) 55%, rgba(12, 12, 12, 0.55) 80%, rgba(12, 12, 12, 0.22) 94%, rgba(12, 12, 12, 0) 100%)" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(236, 236, 232, 0.50) 0%, rgba(236, 236, 232, 0.40) 45%, rgba(236, 236, 232, 0.15) 75%, rgba(236, 236, 232, 0) 100%)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -79,7 +79,7 @@ export function Contact() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
             >
               Contact
             </h2>
@@ -101,23 +101,23 @@ export function Contact() {
                     rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     className="flex items-center gap-4 group w-fit"
                   >
-                <span className="shrink-0 transition-colors duration-200" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+                <span className="shrink-0 transition-colors duration-200" style={{ color: "#6B6B66" }}>
                   <Icon size={16} strokeWidth={1.5} />
                 </span>
                 <span
                   className="text-base transition-colors duration-200 border-b"
                   style={{
                     fontFamily: "var(--font-sans)",
-                    color: "#FFFFFF",
-                    borderColor: "rgba(255, 255, 255, 0.15)",
+                    color: "#1A1A18",
+                    borderColor: "rgba(0, 0, 0, 0.12)",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "#E0A062";
-                    (e.currentTarget as HTMLElement).style.color = "#E0A062";
+                    (e.currentTarget as HTMLElement).style.borderColor = "#B8643C";
+                    (e.currentTarget as HTMLElement).style.color = "#B8643C";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(255, 255, 255, 0.15)";
-                    (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(0, 0, 0, 0.12)";
+                    (e.currentTarget as HTMLElement).style.color = "#1A1A18";
                   }}
                 >
                   {display}

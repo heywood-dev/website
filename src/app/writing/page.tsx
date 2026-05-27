@@ -7,7 +7,7 @@ export default function WritingIndex() {
     <div className="min-h-screen flex items-center justify-center">
       <p
         className="text-base"
-        style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+        style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
       >
         More soon.
       </p>

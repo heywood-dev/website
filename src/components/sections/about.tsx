@@ -19,7 +19,7 @@ const paraVariants: Variants = {
 export function About() {
   return (
     <section id="about" className="py-12 md:py-20">
-      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(12, 12, 12, 0.80) 0%, rgba(12, 12, 12, 0.78) 55%, rgba(12, 12, 12, 0.55) 80%, rgba(12, 12, 12, 0.22) 94%, rgba(12, 12, 12, 0) 100%)" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(236, 236, 232, 0.50) 0%, rgba(236, 236, 232, 0.40) 45%, rgba(236, 236, 232, 0.15) 75%, rgba(236, 236, 232, 0) 100%)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -27,7 +27,7 @@ export function About() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-sm md:text-base tracking-widest"
-            style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+            style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
           >
             About
           </motion.h2>
@@ -42,7 +42,7 @@ export function About() {
             <motion.p
               variants={paraVariants}
               className="text-base md:text-lg leading-[1.75]"
-              style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
             >
               Find the break. Build the fix. Make sure it gets used.
             </motion.p>
@@ -50,7 +50,7 @@ export function About() {
             <motion.p
               variants={paraVariants}
               className="text-base md:text-lg leading-[1.75]"
-              style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
             >
               That&apos;s the whole job. I&apos;ve done it as a consultant, an operator,
               and a founder, and prototyped well past that, across industries that look
@@ -61,7 +61,7 @@ export function About() {
             <motion.p
               variants={paraVariants}
               className="text-base md:text-lg leading-[1.75]"
-              style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
             >
               I ship fast and I learn faster. I want to work at the intersection of
               client, product, and operations.

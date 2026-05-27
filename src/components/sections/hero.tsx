@@ -18,7 +18,7 @@ export function Hero() {
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse 65% 50% at center, rgba(10, 10, 10, 0.78) 0%, rgba(10, 10, 10, 0.45) 35%, rgba(10, 10, 10, 0) 78%)",
+            "radial-gradient(ellipse 65% 50% at center, rgba(236, 236, 232, 0.5) 0%, rgba(236, 236, 232, 0.25) 35%, rgba(236, 236, 232, 0) 78%)",
         }}
       />
 
@@ -33,7 +33,7 @@ export function Hero() {
             fontFamily: "var(--font-fraunces)",
             fontSize: "clamp(3.5rem, 10vw, 9rem)",
             fontWeight: 300,
-            color: "#FFFFFF",
+            color: "#1A1A18",
           }}
         >
           Devanté Heywood
@@ -47,7 +47,7 @@ export function Hero() {
           style={{
             fontFamily: "var(--font-sans)",
             letterSpacing: "0.01em",
-            color: "#FFFFFF",
+            color: "#1A1A18",
           }}
         >
           I build operational systems that non-technical teams actually use.
@@ -57,7 +57,7 @@ export function Hero() {
       {/* Scroll cue, 1px hairline */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 z-10"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+        style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
         aria-hidden
       />
     </section>

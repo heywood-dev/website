@@ -75,11 +75,11 @@ function RoleRow({ role }: { role: Role }) {
     >
       <div
         className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
-        style={{ borderColor: "rgba(255, 255, 255, 0.15)" }}
+        style={{ borderColor: "rgba(0, 0, 0, 0.12)" }}
       >
         <span
           className="w-16 shrink-0 text-xs tabular-nums"
-          style={{ fontFamily: "var(--font-mono)", color: "rgba(255, 255, 255, 0.7)" }}
+          style={{ fontFamily: "var(--font-mono)", color: "#6B6B66" }}
         >
           {role.year}
         </span>
@@ -89,7 +89,7 @@ function RoleRow({ role }: { role: Role }) {
           style={{
             fontFamily: "var(--font-fraunces)",
             fontWeight: 300,
-            color: hovered ? "#E0A062" : "#FFFFFF",
+            color: hovered ? "#B8643C" : "#1A1A18",
           }}
         >
           {role.title}
@@ -97,7 +97,7 @@ function RoleRow({ role }: { role: Role }) {
 
         <span
           className="shrink-0 small-caps text-xs tracking-wider text-right hidden md:block"
-          style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+          style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
         >
           {role.tag}
         </span>
@@ -112,7 +112,7 @@ function RoleRow({ role }: { role: Role }) {
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
             className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
-            style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+            style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
           >
             {role.description}
           </motion.p>
@@ -125,7 +125,7 @@ function RoleRow({ role }: { role: Role }) {
 export function Experience() {
   return (
     <section id="experience" className="py-12 md:py-20">
-      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(12, 12, 12, 0.80) 0%, rgba(12, 12, 12, 0.78) 55%, rgba(12, 12, 12, 0.55) 80%, rgba(12, 12, 12, 0.22) 94%, rgba(12, 12, 12, 0) 100%)" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(236, 236, 232, 0.50) 0%, rgba(236, 236, 232, 0.40) 45%, rgba(236, 236, 232, 0.15) 75%, rgba(236, 236, 232, 0) 100%)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -133,7 +133,7 @@ export function Experience() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-sm md:text-base tracking-widest"
-            style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+            style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
           >
             Experience
           </motion.h2>
@@ -147,7 +147,7 @@ export function Experience() {
             {roles.map((r) => (
               <RoleRow key={r.title + r.year} role={r} />
             ))}
-            <div className="border-t" style={{ borderColor: "rgba(255, 255, 255, 0.15)" }} />
+            <div className="border-t" style={{ borderColor: "rgba(0, 0, 0, 0.12)" }} />
           </motion.div>
         </div>
       </div>

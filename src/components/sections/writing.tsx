@@ -7,7 +7,7 @@ export function Writing() {
     <section id="writing" className="py-12 md:py-20">
       <div
         className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24"
-        style={{ background: "radial-gradient(ellipse at center, rgba(12, 12, 12, 0.80) 0%, rgba(12, 12, 12, 0.78) 55%, rgba(12, 12, 12, 0.55) 80%, rgba(12, 12, 12, 0.22) 94%, rgba(12, 12, 12, 0) 100%)" }}
+        style={{ background: "radial-gradient(ellipse at center, rgba(236, 236, 232, 0.50) 0%, rgba(236, 236, 232, 0.40) 45%, rgba(236, 236, 232, 0.15) 75%, rgba(236, 236, 232, 0) 100%)" }}
       >
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
@@ -18,7 +18,7 @@ export function Writing() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
             >
               Writing
             </h2>
@@ -32,7 +32,7 @@ export function Writing() {
           >
             <p
               className="text-base leading-relaxed"
-              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
             >
               More soon.
             </p>

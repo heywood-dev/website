@@ -48,9 +48,9 @@ export function Nav() {
                 <a
                   href={href}
                   className="small-caps text-base md:text-lg tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#E0A062"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
+                  style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#B8643C"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#1A1A18"; }}
                 >
                   {label}
                 </a>
@@ -67,8 +67,8 @@ export function Nav() {
         onClick={() => setOpen(!open)}
         className="fixed top-4 right-4 z-[60] md:hidden p-2 rounded-md"
         style={{
-          color: "#FFFFFF",
-          backgroundColor: open ? "transparent" : "rgba(10, 10, 10, 0.55)",
+          color: "#1A1A18",
+          backgroundColor: open ? "transparent" : "rgba(236, 236, 232, 0.55)",
           backdropFilter: open ? "none" : "blur(6px)",
         }}
       >
@@ -79,7 +79,7 @@ export function Nav() {
       {open && (
         <div
           className="fixed inset-0 z-50 md:hidden flex flex-col items-center justify-center"
-          style={{ backgroundColor: "rgba(10, 10, 10, 0.97)" }}
+          style={{ backgroundColor: "rgba(236, 236, 232, 0.97)" }}
         >
           <ul className="flex flex-col items-center gap-7">
             {links.map(({ label, href }) => (
@@ -88,7 +88,7 @@ export function Nav() {
                   href={href}
                   onClick={() => setOpen(false)}
                   className="small-caps text-2xl tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+                  style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
                 >
                   {label}
                 </a>

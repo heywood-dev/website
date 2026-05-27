@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Athletics() {
   return (
     <section id="athletics" className="py-12 md:py-20">
-      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(12, 12, 12, 0.80) 0%, rgba(12, 12, 12, 0.78) 55%, rgba(12, 12, 12, 0.55) 80%, rgba(12, 12, 12, 0.22) 94%, rgba(12, 12, 12, 0) 100%)" }}>
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(236, 236, 232, 0.50) 0%, rgba(236, 236, 232, 0.40) 45%, rgba(236, 236, 232, 0.15) 75%, rgba(236, 236, 232, 0) 100%)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -15,7 +15,7 @@ export function Athletics() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
             >
               Athletics
             </h2>
@@ -29,7 +29,7 @@ export function Athletics() {
           >
             <p
               className="text-lg md:text-xl leading-snug max-w-[52ch]"
-              style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300, color: "#FFFFFF" }}
+              style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300, color: "#1A1A18" }}
             >
               Participated at the highest levels of the sport, including a national
               age-group{" "}
