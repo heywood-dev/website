@@ -105,20 +105,8 @@ export function Contact() {
                   <Icon size={16} strokeWidth={1.5} />
                 </span>
                 <span
-                  className="text-base transition-colors duration-200 border-b"
-                  style={{
-                    fontFamily: "var(--font-sans)",
-                    color: "var(--foreground)",
-                    borderColor: "var(--hairline)",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
-                    (e.currentTarget as HTMLElement).style.color = "var(--accent)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "var(--hairline)";
-                    (e.currentTarget as HTMLElement).style.color = "var(--foreground)";
-                  }}
+                  className="text-base inline-link"
+                  style={{ fontFamily: "var(--font-sans)" }}
                 >
                   {display}
                 </span>

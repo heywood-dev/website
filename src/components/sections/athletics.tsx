@@ -36,7 +36,7 @@ export function Athletics() {
                 href="https://past.jamaica-gleaner.com/article/sports/20160208/unstoppable-bromfield-leads-record-fest-western-champs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="athletics-link"
+                className="inline-link"
               >
                 national age-group record
               </a>{" "}
@@ -45,7 +45,7 @@ export function Athletics() {
                 href="https://www.jamaicaobserver.com/2022/06/20/quarter-miler-devante-heywood-gets-upenn-opportunity/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="athletics-link"
+                className="inline-link"
               >
                 stood for over a decade
               </a>
@@ -54,7 +54,7 @@ export function Athletics() {
                 href="https://pennathletics.com/news/2023/4/29/men-shatter-record-t-f-set-six-program-marks-at-127th-running-of-the-penn-relays.aspx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="athletics-link"
+                className="inline-link"
               >
                 program-history relay finish
               </a>{" "}

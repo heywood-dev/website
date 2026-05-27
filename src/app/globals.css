@@ -60,14 +60,22 @@ body {
   font-weight: 400;
 }
 
-/* Athletics inline source links: no underline at rest, terracotta accent on hover. */
-.athletics-link {
-  color: inherit;
-  border-bottom: 1px solid transparent;
-  transition: color 200ms ease, border-color 200ms ease;
-  text-decoration: none;
-}
-.athletics-link:hover {
+/* In-text hyperlinks (Athletics prose links, Contact text labels, etc.).
+   Visible at rest as terracotta with a quiet underline; hover deepens both. */
+.inline-link {
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: auto;
+  transition:
+    color 150ms ease,
+    text-decoration-color 150ms ease,
+    text-decoration-thickness 150ms ease;
+}
+.inline-link:hover {
+  color: #8E4129;
+  text-decoration-color: #8E4129;
+  text-decoration-thickness: 2px;
 }
