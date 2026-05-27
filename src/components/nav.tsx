@@ -5,11 +5,12 @@ import { Menu, X } from "lucide-react";
 import { Magnetic } from "@/components/ui/magnetic";
 
 const links = [
+  { label: "About",      href: "#about" },
+  { label: "Education",  href: "#education" },
   { label: "Experience", href: "#experience" },
   { label: "Projects",   href: "#projects" },
   { label: "Athletics",  href: "#athletics" },
   { label: "Writing",    href: "#writing" },
-  { label: "Education",  href: "#education" },
   { label: "Contact",    href: "#contact" },
 ];
 
@@ -34,23 +35,28 @@ export function Nav() {
 
   return (
     <>
-      {/* Desktop nav: md and up */}
+      {/* Desktop nav: md and up. Single subtle glass tint on the floating bar. */}
       <nav
-        className="fixed top-0 right-0 z-50 p-6 md:p-8 transition-opacity duration-300 hidden md:block"
-        style={{ opacity: scrolled ? 0.7 : 1 }}
+        className="fixed top-4 right-4 z-50 px-5 py-3 rounded-lg transition-opacity duration-300 hidden md:block"
+        style={{
+          opacity: scrolled ? 0.78 : 1,
+          backgroundColor: "rgba(228, 213, 186, 0.55)",
+          backdropFilter: "blur(10px) saturate(1.05)",
+          WebkitBackdropFilter: "blur(10px) saturate(1.05)",
+        }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = scrolled ? "0.7" : "1"; }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = scrolled ? "0.78" : "1"; }}
       >
-        <ul className="flex items-center gap-7 lg:gap-9">
+        <ul className="flex items-center gap-6 lg:gap-8">
           {links.map(({ label, href }) => (
             <li key={href}>
               <Magnetic strength={0.3} radius={70}>
                 <a
                   href={href}
                   className="small-caps text-base md:text-lg tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#B8643C"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#1A1A18"; }}
+                  style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--accent)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--foreground)"; }}
                 >
                   {label}
                 </a>
@@ -67,9 +73,9 @@ export function Nav() {
         onClick={() => setOpen(!open)}
         className="fixed top-4 right-4 z-[60] md:hidden p-2 rounded-md"
         style={{
-          color: "#1A1A18",
-          backgroundColor: open ? "transparent" : "rgba(236, 236, 232, 0.55)",
-          backdropFilter: open ? "none" : "blur(6px)",
+          color: "var(--foreground)",
+          backgroundColor: open ? "transparent" : "rgba(228, 213, 186, 0.55)",
+          backdropFilter: open ? "none" : "blur(10px) saturate(1.05)",
         }}
       >
         {open ? <X size={26} /> : <Menu size={26} />}
@@ -79,7 +85,7 @@ export function Nav() {
       {open && (
         <div
           className="fixed inset-0 z-50 md:hidden flex flex-col items-center justify-center"
-          style={{ backgroundColor: "rgba(236, 236, 232, 0.97)" }}
+          style={{ backgroundColor: "rgba(228, 213, 186, 0.97)" }}
         >
           <ul className="flex flex-col items-center gap-7">
             {links.map(({ label, href }) => (
@@ -88,7 +94,7 @@ export function Nav() {
                   href={href}
                   onClick={() => setOpen(false)}
                   className="small-caps text-2xl tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+                  style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
                 >
                   {label}
                 </a>

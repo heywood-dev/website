@@ -15,7 +15,7 @@ export function Writing() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               Writing
             </h2>
@@ -29,7 +29,7 @@ export function Writing() {
           >
             <p
               className="text-base leading-relaxed"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               More soon.
             </p>

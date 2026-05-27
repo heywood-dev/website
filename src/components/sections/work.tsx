@@ -135,7 +135,7 @@ const rowVariants: Variants = {
 
 function ProjectRow({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false);
-  const accent = hovered ? "#B8643C" : "#6B6B66";
+  const accent = hovered ? "var(--accent)" : "var(--muted)";
 
   const rowRef = useRef<HTMLDivElement>(null);
   const rx = useMotionValue(0);
@@ -187,11 +187,11 @@ function ProjectRow({ project }: { project: Project }) {
       >
       <div
         className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
-        style={{ borderColor: "rgba(0, 0, 0, 0.12)" }}
+        style={{ borderColor: "var(--hairline)" }}
       >
         <span
           className="w-16 shrink-0 text-xs tabular-nums"
-          style={{ fontFamily: "var(--font-mono)", color: "#6B6B66" }}
+          style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
         >
           {project.year}
         </span>
@@ -203,7 +203,7 @@ function ProjectRow({ project }: { project: Project }) {
               style={{
                 fontFamily: "var(--font-fraunces)",
                 fontWeight: 300,
-                color: hovered ? "#B8643C" : "#1A1A18",
+                color: hovered ? "var(--accent)" : "var(--foreground)",
               }}
             >
               {project.title}
@@ -241,7 +241,7 @@ function ProjectRow({ project }: { project: Project }) {
 
         <span
           className="shrink-0 small-caps text-xs tracking-wider text-right hidden md:block"
-          style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+          style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
         >
           {project.tag}
         </span>
@@ -256,7 +256,7 @@ function ProjectRow({ project }: { project: Project }) {
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
             className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
-            style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+            style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
           >
             {project.description}
           </motion.p>
@@ -278,7 +278,7 @@ export function Projects() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-sm md:text-base tracking-widest"
-            style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+            style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
           >
             Projects
           </motion.h2>
@@ -292,7 +292,7 @@ export function Projects() {
             {projects.map((p) => (
               <ProjectRow key={p.title} project={p} />
             ))}
-            <div className="border-t" style={{ borderColor: "rgba(0, 0, 0, 0.12)" }} />
+            <div className="border-t" style={{ borderColor: "var(--hairline)" }} />
           </motion.div>
         </div>
       </div>

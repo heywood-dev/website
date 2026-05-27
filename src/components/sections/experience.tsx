@@ -75,11 +75,11 @@ function RoleRow({ role }: { role: Role }) {
     >
       <div
         className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
-        style={{ borderColor: "rgba(0, 0, 0, 0.12)" }}
+        style={{ borderColor: "var(--hairline)" }}
       >
         <span
           className="w-16 shrink-0 text-xs tabular-nums"
-          style={{ fontFamily: "var(--font-mono)", color: "#6B6B66" }}
+          style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
         >
           {role.year}
         </span>
@@ -89,7 +89,7 @@ function RoleRow({ role }: { role: Role }) {
           style={{
             fontFamily: "var(--font-fraunces)",
             fontWeight: 300,
-            color: hovered ? "#B8643C" : "#1A1A18",
+            color: hovered ? "var(--accent)" : "var(--foreground)",
           }}
         >
           {role.title}
@@ -97,7 +97,7 @@ function RoleRow({ role }: { role: Role }) {
 
         <span
           className="shrink-0 small-caps text-xs tracking-wider text-right hidden md:block"
-          style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+          style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
         >
           {role.tag}
         </span>
@@ -112,7 +112,7 @@ function RoleRow({ role }: { role: Role }) {
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
             className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
-            style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+            style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
           >
             {role.description}
           </motion.p>
@@ -133,7 +133,7 @@ export function Experience() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-sm md:text-base tracking-widest"
-            style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+            style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
           >
             Experience
           </motion.h2>
@@ -147,7 +147,7 @@ export function Experience() {
             {roles.map((r) => (
               <RoleRow key={r.title + r.year} role={r} />
             ))}
-            <div className="border-t" style={{ borderColor: "rgba(0, 0, 0, 0.12)" }} />
+            <div className="border-t" style={{ borderColor: "var(--hairline)" }} />
           </motion.div>
         </div>
       </div>

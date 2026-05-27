@@ -27,7 +27,7 @@ export function About() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-sm md:text-base tracking-widest"
-            style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+            style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
           >
             About
           </motion.h2>
@@ -42,7 +42,7 @@ export function About() {
             <motion.p
               variants={paraVariants}
               className="text-base md:text-lg leading-[1.75]"
-              style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
               Find the break. Build the fix. Make sure it gets used.
             </motion.p>
@@ -50,7 +50,7 @@ export function About() {
             <motion.p
               variants={paraVariants}
               className="text-base md:text-lg leading-[1.75]"
-              style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
               That&apos;s the whole job. I&apos;ve done it as a consultant, an operator,
               and a founder, and prototyped well past that, across industries that look
@@ -61,7 +61,7 @@ export function About() {
             <motion.p
               variants={paraVariants}
               className="text-base md:text-lg leading-[1.75]"
-              style={{ fontFamily: "var(--font-sans)", color: "#1A1A18" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
               I ship fast and I learn faster. I want to work at the intersection of
               client, product, and operations.

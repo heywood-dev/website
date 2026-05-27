@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export function Athletics() {
   return (
@@ -15,7 +16,7 @@ export function Athletics() {
           >
             <h2
               className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "#6B6B66" }}
+              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
             >
               Athletics
             </h2>
@@ -28,21 +29,30 @@ export function Athletics() {
             transition={{ duration: 0.55, ease: "easeOut" }}
           >
             <p
-              className="text-lg md:text-xl leading-snug max-w-[52ch]"
-              style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300, color: "#1A1A18" }}
+              className="text-lg md:text-xl leading-snug max-w-[60ch]"
+              style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300, color: "var(--foreground)" }}
             >
-              Participated at the highest levels of the sport, including a national
-              age-group{" "}
+              Participated at the highest levels of the sport, including a{" "}
               <a
-                href="https://www.jamaicaobserver.com/2022/06/20/quarter-miler-devante-heywood-gets-upenn-opportunity/"
+                href="https://past.jamaica-gleaner.com/article/sports/20160208/unstoppable-bromfield-leads-record-fest-western-champs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-b border-transparent hover:border-current transition-colors duration-200"
-                style={{ color: "inherit" }}
+                className="inline-link"
               >
-                record
+                national age-group record
+                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
               </a>{" "}
-              in Jamaica that has stood for over a decade.
+              in Jamaica, and a{" "}
+              <a
+                href="https://pennathletics.com/news/2023/4/29/men-shatter-record-t-f-set-six-program-marks-at-127th-running-of-the-penn-relays.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-link"
+              >
+                program-history relay finish
+                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
+              </a>{" "}
+              for Penn at the Penn Relays.
             </p>
           </motion.div>
         </div>
