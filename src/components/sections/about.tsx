@@ -18,8 +18,8 @@ const paraVariants: Variants = {
 
 export function About() {
   return (
-    <section id="about" className="py-12 md:py-20">
-      <div className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24" style={{ background: "radial-gradient(ellipse at center, rgba(236, 236, 232, 0.50) 0%, rgba(236, 236, 232, 0.40) 45%, rgba(236, 236, 232, 0.15) 75%, rgba(236, 236, 232, 0) 100%)" }}>
+    <section id="about" className="py-20 md:py-28">
+      <div className="mx-auto max-w-5xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}

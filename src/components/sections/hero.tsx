@@ -9,10 +9,10 @@ export function Hero() {
       id="hero"
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
     >
-      {/* Mobile-only shader scoped to the hero. Desktop uses the global WarpBackground. */}
+      {/* Hero-scoped Warp shader. */}
       <HeroWarp />
 
-      {/* Dark radial scrim so the name and positioning line stay crisp over the shader. */}
+      {/* Soft light radial scrim behind hero text. */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden
@@ -59,6 +59,16 @@ export function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 z-10"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
         aria-hidden
+      />
+
+      {/* Soft fade where the hero shader meets the static body. ~96-112px. */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-24 md:h-28 z-[5] pointer-events-none"
+        aria-hidden
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(236, 236, 232, 0) 0%, #ECECE8 100%)",
+        }}
       />
     </section>
   );
