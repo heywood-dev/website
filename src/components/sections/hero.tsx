@@ -5,15 +5,17 @@ import { HeroWarp } from "@/components/ui/warp-background";
 
 interface HeroProps {
   shaderColors?: string[];
+  /** Override the default Warp background with a custom shader component. */
+  Background?: React.ComponentType;
 }
 
-export function Hero({ shaderColors }: HeroProps) {
+export function Hero({ shaderColors, Background }: HeroProps) {
   return (
     <section
       id="hero"
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
     >
-      <HeroWarp colors={shaderColors} />
+      {Background ? <Background /> : <HeroWarp colors={shaderColors} />}
 
       {/* Soft radial scrim behind hero text. */}
       <div

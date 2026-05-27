@@ -18,11 +18,13 @@ export const WARM_CREAM_SHADER = [
 interface PreviewShellProps {
   variant: "a" | "b" | "c";
   shaderColors?: string[];
+  /** Override the hero background entirely. Takes precedence over shaderColors. */
+  HeroBackground?: React.ComponentType;
   label: string;
   blurb: string;
 }
 
-export function PreviewShell({ variant, shaderColors, label, blurb }: PreviewShellProps) {
+export function PreviewShell({ variant, shaderColors, HeroBackground, label, blurb }: PreviewShellProps) {
   return (
     <div data-variant={variant}>
       {/* Variant tag — sits top-left so you know which preview you're looking at. */}
@@ -43,7 +45,7 @@ export function PreviewShell({ variant, shaderColors, label, blurb }: PreviewShe
 
       <Nav />
       <main>
-        <Hero shaderColors={shaderColors} />
+        <Hero shaderColors={shaderColors} Background={HeroBackground} />
         <About />
         <Experience />
         <Projects />
