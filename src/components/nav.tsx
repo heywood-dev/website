@@ -40,7 +40,7 @@ export function Nav() {
         className="fixed top-4 right-4 z-50 px-5 py-3 rounded-lg transition-opacity duration-300 hidden md:block"
         style={{
           opacity: scrolled ? 0.78 : 1,
-          backgroundColor: "rgba(237, 228, 211, 0.55)",
+          backgroundColor: "rgba(228, 213, 186, 0.55)",
           backdropFilter: "blur(10px) saturate(1.05)",
           WebkitBackdropFilter: "blur(10px) saturate(1.05)",
         }}
@@ -74,7 +74,7 @@ export function Nav() {
         className="fixed top-4 right-4 z-[60] md:hidden p-2 rounded-md"
         style={{
           color: "var(--foreground)",
-          backgroundColor: open ? "transparent" : "rgba(237, 228, 211, 0.55)",
+          backgroundColor: open ? "transparent" : "rgba(228, 213, 186, 0.55)",
           backdropFilter: open ? "none" : "blur(10px) saturate(1.05)",
         }}
       >
@@ -85,7 +85,7 @@ export function Nav() {
       {open && (
         <div
           className="fixed inset-0 z-50 md:hidden flex flex-col items-center justify-center"
-          style={{ backgroundColor: "rgba(237, 228, 211, 0.97)" }}
+          style={{ backgroundColor: "rgba(228, 213, 186, 0.97)" }}
         >
           <ul className="flex flex-col items-center gap-7">
             {links.map(({ label, href }) => (

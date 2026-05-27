@@ -42,17 +42,7 @@ export function Athletics() {
                 national age-group record
                 <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
               </a>{" "}
-              in Jamaica that has{" "}
-              <a
-                href="https://www.jamaicaobserver.com/2022/06/20/quarter-miler-devante-heywood-gets-upenn-opportunity/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-link"
-              >
-                stood for over a decade
-                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
-              </a>
-              , and a{" "}
+              in Jamaica, and a{" "}
               <a
                 href="https://pennathletics.com/news/2023/4/29/men-shatter-record-t-f-set-six-program-marks-at-127th-running-of-the-penn-relays.aspx"
                 target="_blank"

@@ -60,13 +60,15 @@ export function Hero() {
         aria-hidden
       />
 
-      {/* Soft fade where the wave shader meets the static body. */}
+      {/* Long fade where the wave shader meets the static body sand.
+          End color matches body bg-color exactly (solid #E4D5BA), so the
+          transition is seamless and no horizontal edge is visible. */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-24 md:h-28 z-[5] pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-32 md:h-40 z-[5] pointer-events-none"
         aria-hidden
         style={{
           background:
-            "linear-gradient(to bottom, transparent 0%, var(--background) 100%)",
+            "linear-gradient(to bottom, transparent 0%, var(--background) 75%, var(--background) 100%)",
         }}
       />
     </section>

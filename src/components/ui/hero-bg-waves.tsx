@@ -3,11 +3,12 @@
 import { HeroBgBase } from "./_shaders/hero-bg-base";
 import { SIMPLEX_NOISE_3D } from "./_shaders/noise";
 
-// Warm oat / sand HSL palette baked into the shader.
-//   hsl(36, 22%, 86%)  light oat highlight
-//   hsl(34, 20%, 82%)  warm light
-//   hsl(32, 24%, 78%)  mid sand
-//   hsl(28, 22%, 72%)  deeper warm sand
+// Deeper sand / oat HSL palette baked into the shader. Reads as warm sand
+// in motion rather than cream silk.
+//   hsl(36, 28%, 80%)  light sand highlight
+//   hsl(34, 26%, 76%)  warm light
+//   hsl(32, 30%, 72%)  mid warm sand
+//   hsl(28, 28%, 66%)  deeper sand
 const FRAGMENT = `
 ${SIMPLEX_NOISE_3D}
 
@@ -42,10 +43,10 @@ void main() {
 
   float t = clamp(uv.y + wave * 2.0 + (n - 0.5) * 0.18, 0.0, 1.0);
 
-  vec3 highlight = hsl2rgb(36.0 / 360.0, 0.22, 0.86);
-  vec3 light     = hsl2rgb(34.0 / 360.0, 0.20, 0.82);
-  vec3 mid       = hsl2rgb(32.0 / 360.0, 0.24, 0.78);
-  vec3 shadow    = hsl2rgb(28.0 / 360.0, 0.22, 0.72);
+  vec3 highlight = hsl2rgb(36.0 / 360.0, 0.28, 0.80);
+  vec3 light     = hsl2rgb(34.0 / 360.0, 0.26, 0.76);
+  vec3 mid       = hsl2rgb(32.0 / 360.0, 0.30, 0.72);
+  vec3 shadow    = hsl2rgb(28.0 / 360.0, 0.28, 0.66);
 
   vec3 col;
   if (t > 0.66) {
@@ -61,7 +62,7 @@ void main() {
 `;
 
 const STATIC_FALLBACK =
-  "linear-gradient(180deg, hsl(36, 22%, 86%) 0%, hsl(28, 22%, 72%) 100%)";
+  "linear-gradient(180deg, hsl(36, 28%, 80%) 0%, hsl(28, 28%, 66%) 100%)";
 
 export function HeroBgWaves() {
   return <HeroBgBase fragmentShader={FRAGMENT} staticBackground={STATIC_FALLBACK} />;

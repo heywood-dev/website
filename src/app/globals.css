@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #EDE4D3;
+  --color-background: #E4D5BA;
   --color-foreground: #1E1812;
   --color-accent:     #B5563A;
-  --color-muted:      #7A6B5A;
-  --color-hairline:   rgba(30, 24, 18, 0.14);
+  --color-muted:      #6E5F4E;
+  --color-hairline:   rgba(30, 24, 18, 0.16);
 
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -13,12 +13,12 @@
 }
 
 :root {
-  --background: #EDE4D3;
+  --background: #E4D5BA;
   --foreground: #1E1812;
-  --muted:      #7A6B5A;
+  --muted:      #6E5F4E;
   --accent:     #B5563A;
-  --hairline:   rgba(30, 24, 18, 0.14);
-  --scrim:      rgba(237, 228, 211, 0.55);
+  --hairline:   rgba(30, 24, 18, 0.16);
+  --scrim:      rgba(228, 213, 186, 0.55);
   --font-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -30,10 +30,10 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Solid sand base. No gradient/attachment so the hero-to-body fade target
+   matches the body color exactly and the seam disappears. */
 body {
-  background-color: #EDE4D3;
-  background-image: radial-gradient(ellipse at 50% 0%, #F2EAD9 0%, #E6DCC8 70%);
-  background-attachment: fixed;
+  background-color: #E4D5BA;
   color: var(--foreground);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -42,18 +42,14 @@ body {
 
 ::selection {
   background-color: #1E1812;
-  color: #EDE4D3;
+  color: #E4D5BA;
 }
 
-/* Uniform uppercase treatment for nav, section labels, tags.
-   text-transform: uppercase (not font-variant: small-caps) so all letters
-   render at the same height, with consistent letter-spacing. */
 .small-caps {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-/* Canonical italic-serif emphasis for in-line accent words. */
 .accent-emph {
   font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
   font-style: italic;
@@ -71,7 +67,6 @@ body {
 .inline-link:hover {
   color: #8E4129;
 }
-/* Trailing ArrowUpRight icon sits at the baseline of its line with a small gap. */
 .inline-link svg {
   display: inline-block;
   vertical-align: -0.15em;

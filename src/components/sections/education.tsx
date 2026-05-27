@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 export function Education() {
   return (
@@ -28,8 +29,17 @@ export function Education() {
               className="text-base md:text-lg leading-relaxed max-w-[60ch]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
-              University of Pennsylvania. B.S.E. Systems Engineering, concentration in
-              AI and Data Analytics. May 2026.
+              <a
+                href="https://www.jamaicaobserver.com/2022/06/20/quarter-miler-devante-heywood-gets-upenn-opportunity/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-link"
+              >
+                University of Pennsylvania
+                <ArrowUpRight size={14} aria-hidden strokeWidth={1.75} />
+              </a>
+              . B.S.E. Systems Engineering, concentration in AI and Data Analytics.
+              May 2026.
             </p>
           </motion.div>
         </div>
