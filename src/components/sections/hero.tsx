@@ -45,7 +45,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.18 }}
           className="mt-6 text-base md:text-lg max-w-xl"
           style={{
-            fontFamily: "var(--font-inter)",
+            fontFamily: "var(--font-sans)",
             letterSpacing: "0.01em",
             color: "#FFFFFF",
           }}

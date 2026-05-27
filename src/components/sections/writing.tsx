@@ -6,8 +6,8 @@ export function Writing() {
   return (
     <section id="writing" className="py-12 md:py-20">
       <div
-        className="mx-auto max-w-5xl px-6 md:px-12 py-14 md:py-20 border"
-        style={{ backgroundColor: "rgba(20, 20, 20, 0.94)", borderColor: "rgba(255, 255, 255, 0.08)" }}
+        className="mx-auto max-w-5xl px-6 md:px-12 py-16 md:py-24"
+        style={{ background: "radial-gradient(ellipse at center, rgba(12, 12, 12, 0.80) 0%, rgba(12, 12, 12, 0.78) 55%, rgba(12, 12, 12, 0.55) 80%, rgba(12, 12, 12, 0.22) 94%, rgba(12, 12, 12, 0) 100%)" }}
       >
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
@@ -17,8 +17,8 @@ export function Writing() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <h2
-              className="small-caps text-xs tracking-widest"
-              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
+              className="small-caps text-sm md:text-base tracking-widest"
+              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               Writing
             </h2>
@@ -32,7 +32,7 @@ export function Writing() {
           >
             <p
               className="text-base leading-relaxed"
-              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               More soon.
             </p>

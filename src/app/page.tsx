@@ -28,13 +28,13 @@ export default function Home() {
           <div className="mx-auto max-w-4xl px-6 md:px-12 flex items-center justify-between">
             <span
               className="text-xs"
-              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               Devanté Heywood
             </span>
             <span
               className="text-xs"
-              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
+              style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               {new Date().getFullYear()}
             </span>

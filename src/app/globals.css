@@ -9,13 +9,14 @@
   --color-muted:      rgba(255, 255, 255, 0.7);
 
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans:  var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono:  var(--font-mono), "SFMono-Regular", Consolas, monospace;
 }
 
 :root {
   --background: #0A0A0A;
   --foreground: #FFFFFF;
+  --font-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -31,7 +32,7 @@ body {
   background-image: radial-gradient(ellipse at 50% 0%, #1A1A1A 0%, #0A0A0A 70%);
   background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

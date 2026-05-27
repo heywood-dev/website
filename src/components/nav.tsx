@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { Magnetic } from "@/components/ui/magnetic";
 
 const links = [
@@ -14,6 +15,7 @@ const links = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -21,30 +23,80 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open.
+  useEffect(() => {
+    const original = document.body.style.overflow;
+    document.body.style.overflow = open ? "hidden" : original;
+    return () => {
+      document.body.style.overflow = original;
+    };
+  }, [open]);
+
   return (
-    <nav
-      className="fixed top-0 right-0 z-50 p-6 md:p-8 transition-opacity duration-300"
-      style={{ opacity: scrolled ? 0.65 : 1 }}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = scrolled ? "0.65" : "1"; }}
-    >
-      <ul className="flex items-center gap-5 md:gap-7">
-        {links.map(({ label, href }) => (
-          <li key={href}>
-            <Magnetic strength={0.3} radius={60}>
-              <a
-                href={href}
-                className="small-caps text-xs tracking-widest transition-colors duration-200"
-                style={{ fontFamily: "var(--font-inter)", color: "#FFFFFF" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#E0A062"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
-              >
-                {label}
-              </a>
-            </Magnetic>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      {/* Desktop nav: md and up */}
+      <nav
+        className="fixed top-0 right-0 z-50 p-6 md:p-8 transition-opacity duration-300 hidden md:block"
+        style={{ opacity: scrolled ? 0.7 : 1 }}
+        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = scrolled ? "0.7" : "1"; }}
+      >
+        <ul className="flex items-center gap-7 lg:gap-9">
+          {links.map(({ label, href }) => (
+            <li key={href}>
+              <Magnetic strength={0.3} radius={70}>
+                <a
+                  href={href}
+                  className="small-caps text-base md:text-lg tracking-widest transition-colors duration-200"
+                  style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#E0A062"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
+                >
+                  {label}
+                </a>
+              </Magnetic>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Mobile burger button */}
+      <button
+        type="button"
+        aria-label={open ? "Close menu" : "Open menu"}
+        onClick={() => setOpen(!open)}
+        className="fixed top-4 right-4 z-[60] md:hidden p-2 rounded-md"
+        style={{
+          color: "#FFFFFF",
+          backgroundColor: open ? "transparent" : "rgba(10, 10, 10, 0.55)",
+          backdropFilter: open ? "none" : "blur(6px)",
+        }}
+      >
+        {open ? <X size={26} /> : <Menu size={26} />}
+      </button>
+
+      {/* Mobile overlay menu */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 md:hidden flex flex-col items-center justify-center"
+          style={{ backgroundColor: "rgba(10, 10, 10, 0.97)" }}
+        >
+          <ul className="flex flex-col items-center gap-7">
+            {links.map(({ label, href }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className="small-caps text-2xl tracking-widest transition-colors duration-200"
+                  style={{ fontFamily: "var(--font-sans)", color: "#FFFFFF" }}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }

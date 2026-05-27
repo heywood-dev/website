@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { WarpBackground } from "@/components/ui/warp-background";
 
@@ -8,12 +8,6 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   axes: ["SOFT", "WONK", "opsz"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -48,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${fraunces.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen antialiased">
         <WarpBackground />

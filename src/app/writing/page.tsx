@@ -4,10 +4,10 @@
 
 export default function WritingIndex() {
   return (
-    <div className="min-h-screen bg-[#FAFAF7] flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center">
       <p
-        className="text-base text-[#6B6B63]"
-        style={{ fontFamily: "var(--font-inter)" }}
+        className="text-base"
+        style={{ fontFamily: "var(--font-sans)", color: "rgba(255, 255, 255, 0.7)" }}
       >
         More soon.
       </p>
