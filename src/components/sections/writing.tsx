@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 
 export function Writing() {
   return (
-    <section id="writing" className="py-32 md:py-48">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+    <section id="writing" className="py-12 md:py-20">
+      <div
+        className="mx-auto max-w-5xl px-6 md:px-12 py-14 md:py-20 border"
+        style={{ backgroundColor: "rgba(20, 20, 20, 0.94)", borderColor: "rgba(255, 255, 255, 0.08)" }}
+      >
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -15,7 +18,7 @@ export function Writing() {
           >
             <h2
               className="small-caps text-xs tracking-widest"
-              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               Writing
             </h2>
@@ -29,7 +32,7 @@ export function Writing() {
           >
             <p
               className="text-base leading-relaxed"
-              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               More soon.
             </p>

@@ -23,18 +23,18 @@ export default function Home() {
         <Contact />
         <footer
           className="border-t py-8"
-          style={{ borderColor: "#D9D2C5" }}
+          style={{ borderColor: "rgba(255, 255, 255, 0.15)" }}
         >
           <div className="mx-auto max-w-4xl px-6 md:px-12 flex items-center justify-between">
             <span
               className="text-xs"
-              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               Devanté Heywood
             </span>
             <span
               className="text-xs"
-              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               {new Date().getFullYear()}
             </span>

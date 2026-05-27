@@ -35,9 +35,9 @@ export function Nav() {
               <a
                 href={href}
                 className="small-caps text-xs tracking-widest transition-colors duration-200"
-                style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#B8643C"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#1A1612"; }}
+                style={{ fontFamily: "var(--font-inter)", color: "#FFFFFF" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#E0A062"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#FFFFFF"; }}
               >
                 {label}
               </a>

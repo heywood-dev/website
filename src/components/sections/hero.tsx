@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { HeroWarp } from "@/components/ui/warp-background";
 
 export function Hero() {
   return (
@@ -8,14 +9,16 @@ export function Hero() {
       id="hero"
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
     >
-      {/* Soft radial scrim. Paper color fades to transparent so the ripple shows around,
-          but the hero name and positioning line stay crisp at center. */}
+      {/* Mobile-only shader scoped to the hero. Desktop uses the global WarpBackground. */}
+      <HeroWarp />
+
+      {/* Dark radial scrim so the name and positioning line stay crisp over the shader. */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse 65% 50% at center, rgba(245, 241, 234, 0.92) 0%, rgba(245, 241, 234, 0.78) 35%, rgba(245, 241, 234, 0) 75%)",
+            "radial-gradient(ellipse 65% 50% at center, rgba(10, 10, 10, 0.78) 0%, rgba(10, 10, 10, 0.45) 35%, rgba(10, 10, 10, 0) 78%)",
         }}
       />
 
@@ -30,7 +33,7 @@ export function Hero() {
             fontFamily: "var(--font-fraunces)",
             fontSize: "clamp(3.5rem, 10vw, 9rem)",
             fontWeight: 300,
-            color: "#1A1612",
+            color: "#FFFFFF",
           }}
         >
           Devanté Heywood
@@ -44,7 +47,7 @@ export function Hero() {
           style={{
             fontFamily: "var(--font-inter)",
             letterSpacing: "0.01em",
-            color: "#1A1612",
+            color: "#FFFFFF",
           }}
         >
           I build operational systems that non-technical teams actually use.
@@ -53,8 +56,8 @@ export function Hero() {
 
       {/* Scroll cue, 1px hairline */}
       <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12"
-        style={{ backgroundColor: "#D9D2C5" }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 z-10"
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
         aria-hidden
       />
     </section>

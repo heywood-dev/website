@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@next/mdx": "^16.2.4",
+    "@paper-design/shaders-react": "^0.0.76",
     "@types/three": "^0.184.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",

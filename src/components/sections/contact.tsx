@@ -68,8 +68,8 @@ const itemVariants: Variants = {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-32 md:py-48">
-      <div className="mx-auto max-w-5xl px-6 md:px-12" style={{ backgroundColor: "#F5F1EA" }}>
+    <section id="contact" className="py-12 md:py-20">
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-14 md:py-20 border" style={{ backgroundColor: "rgba(20, 20, 20, 0.94)", borderColor: "rgba(255, 255, 255, 0.08)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -79,7 +79,7 @@ export function Contact() {
           >
             <h2
               className="small-caps text-xs tracking-widest"
-              style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+              style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
             >
               Contact
             </h2>
@@ -101,23 +101,23 @@ export function Contact() {
                     rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     className="flex items-center gap-4 group w-fit"
                   >
-                <span className="shrink-0 transition-colors duration-200" style={{ color: "#6B6358" }}>
+                <span className="shrink-0 transition-colors duration-200" style={{ color: "rgba(255, 255, 255, 0.7)" }}>
                   <Icon size={16} strokeWidth={1.5} />
                 </span>
                 <span
                   className="text-base transition-colors duration-200 border-b"
                   style={{
                     fontFamily: "var(--font-inter)",
-                    color: "#1A1612",
-                    borderColor: "#D9D2C5",
+                    color: "#FFFFFF",
+                    borderColor: "rgba(255, 255, 255, 0.15)",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "#B8643C";
-                    (e.currentTarget as HTMLElement).style.color = "#B8643C";
+                    (e.currentTarget as HTMLElement).style.borderColor = "#E0A062";
+                    (e.currentTarget as HTMLElement).style.color = "#E0A062";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "#D9D2C5";
-                    (e.currentTarget as HTMLElement).style.color = "#1A1612";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(255, 255, 255, 0.15)";
+                    (e.currentTarget as HTMLElement).style.color = "#FFFFFF";
                   }}
                 >
                   {display}

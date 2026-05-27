@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #F5F1EA;
-  --color-foreground: #1A1612;
-  --color-accent:     #B8643C;
+  --color-background: #0A0A0A;
+  --color-foreground: #FFFFFF;
+  --color-accent:     #E0A062;
   --color-graphite:   #3a3a3a;
-  --color-hairline:   #D9D2C5;
-  --color-muted:      #6B6358;
+  --color-hairline:   rgba(255, 255, 255, 0.15);
+  --color-muted:      rgba(255, 255, 255, 0.7);
 
   --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans:  var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -14,8 +14,8 @@
 }
 
 :root {
-  --background: #F5F1EA;
-  --foreground: #1A1612;
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
 }
 
 * {
@@ -27,28 +27,18 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background-color: #0A0A0A;
+  background-image: radial-gradient(ellipse at 50% 0%, #1A1A1A 0%, #0A0A0A 70%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Paper grain texture overlay — barely perceptible, adds warmth */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
-
 ::selection {
-  background-color: #1A1612;
-  color: #F5F1EA;
+  background-color: #FFFFFF;
+  color: #0A0A0A;
 }
 
 .small-caps {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { PaperRippleBg } from "@/components/ui/paper-ripple-bg";
+import { WarpBackground } from "@/components/ui/warp-background";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -51,7 +51,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen antialiased">
-        <PaperRippleBg />
+        <WarpBackground />
         <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
       </body>
     </html>

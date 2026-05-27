@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export function Education() {
   return (
-    <section id="education" className="py-32 md:py-48">
-      <div className="mx-auto max-w-5xl px-6 md:px-12" style={{ backgroundColor: "#F5F1EA" }}>
+    <section id="education" className="py-12 md:py-20">
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-14 md:py-20 border" style={{ backgroundColor: "rgba(20, 20, 20, 0.94)", borderColor: "rgba(255, 255, 255, 0.08)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -13,7 +13,7 @@ export function Education() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-xs tracking-widest"
-            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+            style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
           >
             Education
           </motion.h2>
@@ -26,7 +26,7 @@ export function Education() {
           >
             <p
               className="text-base md:text-lg leading-relaxed max-w-[60ch]"
-              style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
+              style={{ fontFamily: "var(--font-inter)", color: "#FFFFFF" }}
             >
               University of Pennsylvania. B.S.E. Systems Engineering, concentration in
               AI and Data Analytics. May 2026.

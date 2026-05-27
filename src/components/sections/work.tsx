@@ -135,7 +135,7 @@ const rowVariants: Variants = {
 
 function ProjectRow({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false);
-  const accent = hovered ? "#B8643C" : "#6B6358";
+  const accent = hovered ? "#E0A062" : "rgba(255, 255, 255, 0.7)";
 
   const rowRef = useRef<HTMLDivElement>(null);
   const rx = useMotionValue(0);
@@ -187,11 +187,11 @@ function ProjectRow({ project }: { project: Project }) {
       >
       <div
         className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
-        style={{ borderColor: "#D9D2C5" }}
+        style={{ borderColor: "rgba(255, 255, 255, 0.15)" }}
       >
         <span
           className="w-16 shrink-0 text-xs tabular-nums"
-          style={{ fontFamily: "var(--font-mono)", color: "#6B6358" }}
+          style={{ fontFamily: "var(--font-mono)", color: "rgba(255, 255, 255, 0.7)" }}
         >
           {project.year}
         </span>
@@ -203,7 +203,7 @@ function ProjectRow({ project }: { project: Project }) {
               style={{
                 fontFamily: "var(--font-fraunces)",
                 fontWeight: 300,
-                color: hovered ? "#B8643C" : "#1A1612",
+                color: hovered ? "#E0A062" : "#FFFFFF",
               }}
             >
               {project.title}
@@ -241,7 +241,7 @@ function ProjectRow({ project }: { project: Project }) {
 
         <span
           className="shrink-0 small-caps text-xs tracking-wider text-right hidden md:block"
-          style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+          style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
         >
           {project.tag}
         </span>
@@ -256,7 +256,7 @@ function ProjectRow({ project }: { project: Project }) {
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
             className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
-            style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
+            style={{ fontFamily: "var(--font-inter)", color: "#FFFFFF" }}
           >
             {project.description}
           </motion.p>
@@ -269,8 +269,8 @@ function ProjectRow({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="py-32 md:py-48">
-      <div className="mx-auto max-w-5xl px-6 md:px-12" style={{ backgroundColor: "#F5F1EA" }}>
+    <section id="projects" className="py-12 md:py-20">
+      <div className="mx-auto max-w-5xl px-6 md:px-12 py-14 md:py-20 border" style={{ backgroundColor: "rgba(20, 20, 20, 0.94)", borderColor: "rgba(255, 255, 255, 0.08)" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -278,7 +278,7 @@ export function Projects() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="small-caps text-xs tracking-widest"
-            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+            style={{ fontFamily: "var(--font-inter)", color: "rgba(255, 255, 255, 0.7)" }}
           >
             Projects
           </motion.h2>
@@ -292,7 +292,7 @@ export function Projects() {
             {projects.map((p) => (
               <ProjectRow key={p.title} project={p} />
             ))}
-            <div className="border-t" style={{ borderColor: "#D9D2C5" }} />
+            <div className="border-t" style={{ borderColor: "rgba(255, 255, 255, 0.15)" }} />
           </motion.div>
         </div>
       </div>
