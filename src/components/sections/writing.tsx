@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Writing() {
   return (
     <section id="writing" className="py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12" data-glass-target>
+      <div className="mx-auto max-w-5xl px-6 md:px-12">
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}

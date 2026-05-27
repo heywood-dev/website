@@ -1,23 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HeroWarp } from "@/components/ui/warp-background";
+import { HeroBgWaves } from "@/components/ui/hero-bg-waves";
 
-interface HeroProps {
-  shaderColors?: string[];
-  /** Override the default Warp background with a custom shader component. */
-  Background?: React.ComponentType;
-}
-
-export function Hero({ shaderColors, Background }: HeroProps) {
+export function Hero() {
   return (
     <section
       id="hero"
       className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden"
     >
-      {Background ? <Background /> : <HeroWarp colors={shaderColors} />}
+      <HeroBgWaves />
 
-      {/* Soft radial scrim behind hero text. */}
+      {/* Soft radial scrim behind hero text so it stays crisp over the moving waves. */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         aria-hidden
@@ -59,12 +53,14 @@ export function Hero({ shaderColors, Background }: HeroProps) {
         </motion.p>
       </div>
 
+      {/* Scroll cue */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 z-10"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
+        style={{ backgroundColor: "rgba(30, 24, 18, 0.3)" }}
         aria-hidden
       />
 
+      {/* Soft fade where the wave shader meets the static body. */}
       <div
         className="absolute bottom-0 left-0 right-0 h-24 md:h-28 z-[5] pointer-events-none"
         aria-hidden
