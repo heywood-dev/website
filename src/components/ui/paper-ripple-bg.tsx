@@ -5,7 +5,7 @@ import { useReducedMotion } from "@/hooks/use-interaction-prefs";
 
 const SPACING         = 22;
 const DOT_RADIUS      = 0.95;
-const DOT_OPACITY     = 0.42;
+const DOT_OPACITY     = 0.25;
 const DOT_COLOR       = "#3a3a3a";
 const RIPPLE_RADIUS   = 200;
 const RIPPLE_STRENGTH = 26;

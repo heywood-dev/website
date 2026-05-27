@@ -112,7 +112,7 @@ function RoleRow({ role }: { role: Role }) {
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
             className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
-            style={{ fontFamily: "var(--font-inter)", color: "#6B6358" }}
+            style={{ fontFamily: "var(--font-inter)", color: "#1A1612" }}
           >
             {role.description}
           </motion.p>
@@ -125,7 +125,7 @@ function RoleRow({ role }: { role: Role }) {
 export function Experience() {
   return (
     <section id="experience" className="py-32 md:py-48">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+      <div className="mx-auto max-w-5xl px-6 md:px-12" style={{ backgroundColor: "#F5F1EA" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}

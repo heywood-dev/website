@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { PaperRippleBg } from "@/components/ui/paper-ripple-bg";
-import { Cursor } from "@/components/ui/cursor";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -54,7 +53,6 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <PaperRippleBg />
         <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
-        <Cursor />
       </body>
     </html>
   );

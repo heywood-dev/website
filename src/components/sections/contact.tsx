@@ -25,7 +25,7 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
 
 type IconComponent = React.ComponentType<{ size?: number; strokeWidth?: number; className?: string; color?: string }>;
 
-const links: { icon: IconComponent; label: string; display: string; href: string; download?: boolean }[] = [
+const links: { icon: IconComponent; label: string; display: string; href: string }[] = [
   {
     icon: Mail,
     label: "Email",
@@ -49,7 +49,6 @@ const links: { icon: IconComponent; label: string; display: string; href: string
     label: "Resume",
     display: "Resume (PDF)",
     href: "/resume.pdf",
-    download: true,
   },
 ];
 
@@ -70,7 +69,7 @@ const itemVariants: Variants = {
 export function Contact() {
   return (
     <section id="contact" className="py-32 md:py-48">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+      <div className="mx-auto max-w-5xl px-6 md:px-12" style={{ backgroundColor: "#F5F1EA" }}>
         <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -93,14 +92,13 @@ export function Contact() {
             viewport={{ once: true, margin: "-60px" }}
             className="space-y-5"
           >
-            {links.map(({ icon: Icon, label, display, href, download }) => (
+            {links.map(({ icon: Icon, label, display, href }) => (
               <motion.div key={label} variants={itemVariants}>
                 <Magnetic as="div" strength={0.2} radius={80}>
                   <a
                     href={href}
-                    target={href.startsWith("mailto") || href.startsWith("/") ? undefined : "_blank"}
-                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    download={download ? true : undefined}
+                    target={href.startsWith("mailto") ? undefined : "_blank"}
+                    rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                     className="flex items-center gap-4 group w-fit"
                   >
                 <span className="shrink-0 transition-colors duration-200" style={{ color: "#6B6358" }}>
