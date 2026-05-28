@@ -70,28 +70,24 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6 md:px-12">
-        <div className="grid md:grid-cols-[1fr_3fr] gap-12 md:gap-16 items-start">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <h2
-              className="small-caps text-sm md:text-base tracking-widest"
-              style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
-            >
-              Contact
-            </h2>
-          </motion.div>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="small-caps text-sm md:text-base tracking-widest mb-6 md:mb-8"
+          style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
+        >
+          Contact
+        </motion.h2>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            className="space-y-5"
-          >
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="space-y-5"
+        >
             {links.map(({ icon: Icon, label, display, href }) => (
               <motion.div key={label} variants={itemVariants}>
                 <Magnetic as="div" strength={0.2} radius={80}>
@@ -114,8 +110,7 @@ export function Contact() {
                 </Magnetic>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

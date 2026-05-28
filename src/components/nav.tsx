@@ -24,7 +24,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open.
   useEffect(() => {
     const original = document.body.style.overflow;
     document.body.style.overflow = open ? "hidden" : original;
@@ -35,25 +34,20 @@ export function Nav() {
 
   return (
     <>
-      {/* Desktop nav: md and up. Single subtle glass tint on the floating bar. */}
+      {/* Desktop nav: plain text, no glass tint. */}
       <nav
-        className="fixed top-4 right-4 z-50 px-5 py-3 rounded-lg transition-opacity duration-300 hidden md:block"
-        style={{
-          opacity: scrolled ? 0.78 : 1,
-          backgroundColor: "rgba(228, 213, 186, 0.55)",
-          backdropFilter: "blur(10px) saturate(1.05)",
-          WebkitBackdropFilter: "blur(10px) saturate(1.05)",
-        }}
+        className="fixed top-6 right-6 md:top-8 md:right-8 z-50 transition-opacity duration-300 hidden md:block"
+        style={{ opacity: scrolled ? 0.78 : 1 }}
         onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
         onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = scrolled ? "0.78" : "1"; }}
       >
-        <ul className="flex items-center gap-6 lg:gap-8">
+        <ul className="flex items-center gap-5 lg:gap-7">
           {links.map(({ label, href }) => (
             <li key={href}>
               <Magnetic strength={0.3} radius={70}>
                 <a
                   href={href}
-                  className="small-caps text-base md:text-lg tracking-widest transition-colors duration-200"
+                  className="small-caps text-sm md:text-base tracking-widest transition-colors duration-200"
                   style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--accent)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--foreground)"; }}
@@ -66,17 +60,13 @@ export function Nav() {
         </ul>
       </nav>
 
-      {/* Mobile burger button */}
+      {/* Mobile burger button: plain, no backdrop. */}
       <button
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen(!open)}
-        className="fixed top-4 right-4 z-[60] md:hidden p-2 rounded-md"
-        style={{
-          color: "var(--foreground)",
-          backgroundColor: open ? "transparent" : "rgba(228, 213, 186, 0.55)",
-          backdropFilter: open ? "none" : "blur(10px) saturate(1.05)",
-        }}
+        className="fixed top-4 right-4 z-[60] md:hidden p-2"
+        style={{ color: "var(--foreground)" }}
       >
         {open ? <X size={26} /> : <Menu size={26} />}
       </button>
