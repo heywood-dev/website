@@ -5,7 +5,6 @@ import { Education } from "@/components/sections/education";
 import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/work";
 import { Athletics } from "@/components/sections/athletics";
-import { Writing } from "@/components/sections/writing";
 import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
         <Experience />
         <Projects />
         <Athletics />
-        <Writing />
         <Contact />
         <footer
           className="border-t py-8"
