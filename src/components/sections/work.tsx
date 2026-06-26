@@ -29,7 +29,7 @@ const projects: Project[] = [
     year: "2026",
     title: "Arphie Customer Health",
     tag: "Customer Success",
-    repo: "https://github.com/heywoodd-cmyk/arphie-customer-health",
+    repo: "https://github.com/heywood-dev/arphie-customer-health",
     demo: "https://arphie-customer-health.vercel.app",
     description:
       "A customer-health dashboard for Arphie, the AI platform that automates RFP and security-questionnaire responses. Scores 14 accounts live across product usage, sentiment, and contract signals, then surfaces who's thriving, who's at risk, and why. Built so a small CS team can spot churn risk before the renewal call, not after.",
@@ -38,7 +38,7 @@ const projects: Project[] = [
     year: "2026",
     title: "Modal Pricing Analyzer",
     tag: "Pricing Strategy",
-    repo: "https://github.com/heywoodd-cmyk/modal-pricing-analyzer",
+    repo: "https://github.com/heywood-dev/modal-pricing-analyzer",
     demo: "https://modal-pricing-analyzerr.streamlit.app/",
     description:
       "Models what running AI workloads on Modal's pay-per-second GPU service actually costs in production. Plug in a workload and see how the production multipliers can quietly turn a $1,000 estimate into a $6,000 bill, plus where pay-per-second wins against renting servers outright and where it stops being cheaper.",
@@ -47,7 +47,7 @@ const projects: Project[] = [
     year: "2026",
     title: "Launch Readiness Checker",
     tag: "Revenue Ops",
-    repo: "https://github.com/heywoodd-cmyk/launch-readiness-checker",
+    repo: "https://github.com/heywood-dev/launch-readiness-checker",
     demo: "https://launch-readiness-checker.vercel.app",
     description:
       "Catches the expensive mistakes in an ad campaign before it goes live: the misconfigured offers, the brand-safety conflicts, the missing creative, right at the moment money is about to be spent. Built to show how an operations team could catch these automatically instead of discovering them after the budget is gone.",
@@ -56,7 +56,7 @@ const projects: Project[] = [
     year: "2026",
     title: "APLD Switching Analysis",
     tag: "Healthcare Analytics",
-    repo: "https://github.com/heywoodd-cmyk/apld-switching-analysis",
+    repo: "https://github.com/heywood-dev/apld-switching-analysis",
     demo: "https://apld-switching-analysis.streamlit.app/",
     description:
       "A tool that digs through real Medicare prescription data to answer a question a pharma team actually has: which patients are on the wrong medication for their condition, and how many. The answer here was striking. Roughly a third of the group was on a drug their heart or kidney history argues against. It ships as a short insight deck plus a live tool the team can re-filter by age, state, or condition on their own, so the analysis never has to be rebuilt from scratch when the question shifts.",
@@ -65,7 +65,7 @@ const projects: Project[] = [
     year: "2026",
     title: "AEO Visibility Layer",
     tag: "Growth Analytics",
-    repo: "https://github.com/heywoodd-cmyk/aeo-visibility-diff",
+    repo: "https://github.com/heywood-dev/aeo-visibility-diff",
     demo: "https://aeo-visibility-diff.streamlit.app",
     description:
       "Measures how often a company shows up when people ask AI assistants like ChatGPT, Claude, and Gemini for recommendations. It runs real questions across all three and compares the results. An early take on a problem every company is about to care about: being found inside AI answers, not just Google.",
@@ -74,7 +74,7 @@ const projects: Project[] = [
     year: "2025",
     title: "Ops Intelligence Dashboard",
     tag: "AI / Analytics",
-    repo: "https://github.com/heywoodd-cmyk/ops-intelligence-dashboard",
+    repo: "https://github.com/heywood-dev/ops-intelligence-dashboard",
     demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
     description:
       "Upload a messy spreadsheet and get back a clear read on what's actually slowing the team down: where work is piling up, what's overdue, who's overloaded. It turns the hours an ops lead spends cleaning data into a few seconds of clarity.",
@@ -83,7 +83,7 @@ const projects: Project[] = [
     year: "2025",
     title: "AI Operations Copilot",
     tag: "AI / Decision Systems",
-    repo: "https://github.com/heywoodd-cmyk/ai-operations-copilot",
+    repo: "https://github.com/heywood-dev/ai-operations-copilot",
     description:
       "Turns raw operational data into plain-language read-outs a non-technical team can act on, tested hard to make sure it holds up when the data gets weird.",
   },
@@ -91,7 +91,7 @@ const projects: Project[] = [
     year: "2025",
     title: "AI Content Workflow Bot",
     tag: "GTM Automation",
-    repo: "https://github.com/heywoodd-cmyk/ai-content-workflow-bot",
+    repo: "https://github.com/heywood-dev/ai-content-workflow-bot",
     description:
       "Turns internal product updates into ready-to-post LinkedIn and Twitter drafts in the team's voice. One command, finished drafts, less time between a product change and the world hearing about it.",
   },
@@ -99,7 +99,7 @@ const projects: Project[] = [
     year: "2025",
     title: "Repayment Risk Simulator",
     tag: "Decision Systems",
-    repo: "https://github.com/heywoodd-cmyk/repayment-risk-simulator",
+    repo: "https://github.com/heywood-dev/repayment-risk-simulator",
     description:
       "Built on two million real loan records, it flags which borrowers are likely to struggle to repay and turns that into clear approve, decline, or review decisions that hold up when someone checks the work.",
   },

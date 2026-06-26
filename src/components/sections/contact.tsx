@@ -41,8 +41,8 @@ const links: { icon: IconComponent; label: string; display: string; href: string
   {
     icon: GitHubIcon,
     label: "GitHub",
-    display: "github.com/heywoodd-cmyk",
-    href: "https://github.com/heywoodd-cmyk",
+    display: "github.com/heywood-dev",
+    href: "https://github.com/heywood-dev",
   },
   {
     icon: FileText,
