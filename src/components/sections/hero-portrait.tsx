@@ -179,7 +179,7 @@ export function HeroPortrait() {
           >
             <div className="portrait-soft">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/portrait.png" alt="Devanté Heywood" width={240} height={240} />
+              <img src="/portrait.jpg" alt="Devanté Heywood" width={240} height={240} />
             </div>
           </motion.div>
         </div>

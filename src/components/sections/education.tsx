@@ -7,7 +7,7 @@ export function Education() {
   return (
     <section id="education" className="relative overflow-hidden py-24 md:py-32">
       <ImageWatermark
-        src="/landmarks/education.png"
+        src="/landmarks/education.jpg"
         justify="end"
         innerStyle={{ width: "min(900px, 72vw)", marginRight: "clamp(-90px, -5vw, -10px)" }}
         imgStyle={{

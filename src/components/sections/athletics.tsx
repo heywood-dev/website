@@ -8,7 +8,7 @@ export function Athletics() {
   return (
     <section id="athletics" className="relative overflow-hidden py-24 md:py-32">
       <ImageWatermark
-        src="/landmarks/athletics.png"
+        src="/landmarks/athletics.jpg"
         justify="end"
         innerStyle={{
           width: "min(1080px, 86vw)",
