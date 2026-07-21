@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring, type Variants } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { ExternalLink, ArrowUpRight, ChevronDown } from "lucide-react";
 import { Magnetic } from "@/components/ui/magnetic";
 import { useIsTouch, useReducedMotion } from "@/hooks/use-interaction-prefs";
 
@@ -22,6 +22,9 @@ interface Project {
   description: string;
   repo?: string;
   demo?: string;
+  /** Screenshot for the cursor-following preview. Drop new ones in
+      /public/projects/<slug>.png and add the path here. */
+  preview?: string;
 }
 
 const projects: Project[] = [
@@ -31,6 +34,7 @@ const projects: Project[] = [
     tag: "Customer Success",
     repo: "https://github.com/heywood-dev/arphie-customer-health",
     demo: "https://arphie-customer-health.vercel.app",
+    preview: "/projects/arphie-customer-health.png",
     description:
       "A customer-health dashboard for Arphie, the AI platform that automates RFP and security-questionnaire responses. Scores 14 accounts live across product usage, sentiment, and contract signals, then surfaces who's thriving, who's at risk, and why. Built so a small CS team can spot churn risk before the renewal call, not after.",
   },
@@ -40,6 +44,7 @@ const projects: Project[] = [
     tag: "Pricing Strategy",
     repo: "https://github.com/heywood-dev/modal-pricing-analyzer",
     demo: "https://modal-pricing-analyzerr.streamlit.app/",
+    preview: "/projects/modal-pricing-analyzer.png",
     description:
       "Models what running AI workloads on Modal's pay-per-second GPU service actually costs in production. Plug in a workload and see how the production multipliers can quietly turn a $1,000 estimate into a $6,000 bill, plus where pay-per-second wins against renting servers outright and where it stops being cheaper.",
   },
@@ -49,6 +54,7 @@ const projects: Project[] = [
     tag: "Revenue Ops",
     repo: "https://github.com/heywood-dev/launch-readiness-checker",
     demo: "https://launch-readiness-checker.vercel.app",
+    preview: "/projects/launch-readiness-checker.png",
     description:
       "Catches the expensive mistakes in an ad campaign before it goes live: the misconfigured offers, the brand-safety conflicts, the missing creative, right at the moment money is about to be spent. Built to show how an operations team could catch these automatically instead of discovering them after the budget is gone.",
   },
@@ -58,6 +64,7 @@ const projects: Project[] = [
     tag: "Healthcare Analytics",
     repo: "https://github.com/heywood-dev/apld-switching-analysis",
     demo: "https://apld-switching-analysis.streamlit.app/",
+    preview: "/projects/apld-switching-analysis.png",
     description:
       "A tool that digs through real Medicare prescription data to answer a question a pharma team actually has: which patients are on the wrong medication for their condition, and how many. The answer here was striking. Roughly a third of the group was on a drug their heart or kidney history argues against. It ships as a short insight deck plus a live tool the team can re-filter by age, state, or condition on their own, so the analysis never has to be rebuilt from scratch when the question shifts.",
   },
@@ -67,6 +74,7 @@ const projects: Project[] = [
     tag: "Growth Analytics",
     repo: "https://github.com/heywood-dev/aeo-visibility-diff",
     demo: "https://aeo-visibility-diff.streamlit.app",
+    preview: "/projects/aeo-visibility-layer.png",
     description:
       "Measures how often a company shows up when people ask AI assistants like ChatGPT, Claude, and Gemini for recommendations. It runs real questions across all three and compares the results. An early take on a problem every company is about to care about: being found inside AI answers, not just Google.",
   },
@@ -76,6 +84,7 @@ const projects: Project[] = [
     tag: "AI / Analytics",
     repo: "https://github.com/heywood-dev/ops-intelligence-dashboard",
     demo: "https://ops-intelligence-dashboard-gamma.vercel.app",
+    preview: "/projects/ops-intelligence-dashboard.png",
     description:
       "Upload a messy spreadsheet and get back a clear read on what's actually slowing the team down: where work is piling up, what's overdue, who's overloaded. It turns the hours an ops lead spends cleaning data into a few seconds of clarity.",
   },
@@ -133,62 +142,101 @@ const rowVariants: Variants = {
   },
 };
 
-function ProjectRow({ project }: { project: Project }) {
+const CARD_BG = "color-mix(in srgb, var(--background) 52%, #ffffff)";
+
+function ProjectRow({
+  project,
+  showcase,
+}: {
+  project: Project;
+  showcase: boolean;
+}) {
   const [hovered, setHovered] = useState(false);
   const accent = hovered ? "var(--accent)" : "var(--muted)";
 
-  const rowRef = useRef<HTMLDivElement>(null);
-  const rx = useMotionValue(0);
-  const ry = useMotionValue(0);
-  const sx = useSpring(rx, { stiffness: 240, damping: 22, mass: 0.4 });
-  const sy = useSpring(ry, { stiffness: 240, damping: 22, mass: 0.4 });
-
-  const reduceMotion = useReducedMotion();
-  const isTouch = useIsTouch();
-  const tiltEnabled = !reduceMotion && !isTouch;
-
-  const onMove = (e: React.MouseEvent) => {
-    if (!tiltEnabled) return;
-    const el = rowRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width;  // 0-1
-    const py = (e.clientY - rect.top) / rect.height;  // 0-1
-    rx.set((py - 0.5) * -8); // max ~4 deg in either direction
-    ry.set((px - 0.5) * 10); // slightly more on Y axis (wider rows)
-  };
-
-  const onLeave = () => {
-    setHovered(false);
-    if (tiltEnabled) {
-      rx.set(0);
-      ry.set(0);
-    }
-  };
-
   return (
     <motion.div
-      layout
-      ref={rowRef}
       variants={rowVariants}
       className="group relative"
       data-interactive
+      style={{
+        backgroundColor: hovered
+          ? "color-mix(in srgb, var(--accent) 5%, transparent)"
+          : "transparent",
+        transition: "background-color 220ms ease",
+      }}
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={onLeave}
-      onMouseMove={onMove}
-      style={tiltEnabled ? { perspective: "1200px" } : undefined}
+      onMouseLeave={() => setHovered(false)}
     >
-      <motion.div
-        style={
-          tiltEnabled
-            ? { rotateX: sx, rotateY: sy, transformStyle: "preserve-3d" }
-            : undefined
-        }
-      >
       <div
-        className="flex items-baseline gap-4 md:gap-8 py-5 border-t"
+        className="relative flex items-baseline gap-4 md:gap-8 py-5 border-t"
         style={{ borderColor: "var(--hairline)" }}
       >
+        {/* Floating preview — anchored above the title, so it tracks the title
+            (not the section) and never covers the title, description, or rows. */}
+        {showcase && (
+          <AnimatePresence>
+            {hovered && (
+              <motion.div
+                key="preview"
+                initial={{ opacity: 0, scale: 0.96, y: 6 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: 6 }}
+                transition={{ duration: 0.26, ease: "easeOut" }}
+                className="pointer-events-none absolute z-40 hidden lg:block w-[300px] overflow-hidden rounded-xl"
+                style={{
+                  bottom: "calc(100% + 10px)",
+                  left: "clamp(220px, 34%, 400px)",
+                  background: CARD_BG,
+                  border: "1px solid var(--hairline)",
+                  boxShadow: "0 30px 60px -22px rgba(30, 24, 18, 0.45)",
+                }}
+                aria-hidden
+              >
+                {project.preview ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={project.preview}
+                    alt=""
+                    className="block h-[184px] w-full object-cover object-top"
+                  />
+                ) : (
+                  <div className="flex h-[184px] flex-col items-center justify-center gap-2 px-6 text-center">
+                    <span
+                      className="text-xl leading-tight"
+                      style={{ fontFamily: "var(--font-fraunces)", fontWeight: 300 }}
+                    >
+                      {project.title}
+                    </span>
+                    <span
+                      className="small-caps text-[11px] tracking-wider"
+                      style={{ color: "var(--muted)", fontFamily: "var(--font-sans)" }}
+                    >
+                      Preview coming soon
+                    </span>
+                  </div>
+                )}
+                <div
+                  className="flex items-center justify-between border-t px-3 py-2"
+                  style={{ borderColor: "var(--hairline)" }}
+                >
+                  <span
+                    className="small-caps text-[10px] tracking-wider"
+                    style={{ color: "var(--muted)", fontFamily: "var(--font-sans)" }}
+                  >
+                    {project.tag}
+                  </span>
+                  <span
+                    className="text-[10px]"
+                    style={{ color: "var(--muted)", fontFamily: "var(--font-mono)" }}
+                  >
+                    {project.year}
+                  </span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        )}
         <span
           className="w-16 shrink-0 text-xs tabular-nums"
           style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
@@ -204,11 +252,28 @@ function ProjectRow({ project }: { project: Project }) {
                 fontFamily: "var(--font-fraunces)",
                 fontWeight: 300,
                 color: hovered ? "var(--accent)" : "var(--foreground)",
+                borderBottom: `1px solid ${hovered ? "var(--accent)" : "transparent"}`,
+                paddingBottom: "1px",
               }}
             >
               {project.title}
             </span>
           </Magnetic>
+
+          {/* Cursor-preview affordance: a small arrow on hover for showcase rows */}
+          {showcase && (
+            <motion.span
+              className="shrink-0"
+              style={{ color: "var(--accent)" }}
+              initial={false}
+              animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -3 }}
+              transition={{ duration: 0.2 }}
+              aria-hidden
+            >
+              <ArrowUpRight size={13} strokeWidth={1.75} />
+            </motion.span>
+          )}
+
           {project.repo && (
             <a
               href={project.repo}
@@ -255,19 +320,27 @@ function ProjectRow({ project }: { project: Project }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
-            className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
+            className="pb-5 pl-20 pr-4 text-sm leading-relaxed max-w-3xl"
             style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
           >
             {project.description}
           </motion.p>
         )}
       </AnimatePresence>
-      </motion.div>
     </motion.div>
   );
 }
 
 export function Projects() {
+  const reduceMotion = useReducedMotion();
+  const isTouch = useIsTouch();
+  const floatEnabled = !reduceMotion && !isTouch;
+
+  const [showMore, setShowMore] = useState(false);
+
+  const featured = projects.filter((p) => p.demo);
+  const more = projects.filter((p) => !p.demo);
+
   return (
     <section id="projects" className="py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6 md:px-12">
@@ -288,11 +361,50 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {projects.map((p) => (
-            <ProjectRow key={p.title} project={p} />
+          {featured.map((p) => (
+            <ProjectRow
+              key={p.title}
+              project={p}
+              showcase={floatEnabled && !!p.demo}
+            />
           ))}
           <div className="border-t" style={{ borderColor: "var(--hairline)" }} />
         </motion.div>
+
+        {/* More — projects without a live link, tucked away by default */}
+        <div className="mt-8">
+          <button
+            type="button"
+            onClick={() => setShowMore((v) => !v)}
+            className="inline-flex items-center gap-2 text-sm small-caps tracking-wider transition-colors duration-200"
+            style={{ fontFamily: "var(--font-sans)", color: "var(--muted)" }}
+          >
+            {showMore ? "Show less" : `More projects (${more.length})`}
+            <motion.span animate={{ rotate: showMore ? 180 : 0 }} transition={{ duration: 0.2 }} aria-hidden>
+              <ChevronDown size={14} strokeWidth={1.75} />
+            </motion.span>
+          </button>
+
+          <AnimatePresence initial={false}>
+            {showMore && (
+              <motion.div
+                key="more"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="overflow-hidden"
+              >
+                <div className="pt-4">
+                  {more.map((p) => (
+                    <ProjectRow key={p.title} project={p} showcase={false} />
+                  ))}
+                  <div className="border-t" style={{ borderColor: "var(--hairline)" }} />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );

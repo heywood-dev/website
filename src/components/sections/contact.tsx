@@ -23,14 +23,34 @@ function GitHubIcon({ size = 16 }: { size?: number }) {
   );
 }
 
+function SubstackIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M22 5.5H2V8h20V5.5zM2 10.75V22l10-4.5L22 22V10.75H2z" />
+    </svg>
+  );
+}
+
 type IconComponent = React.ComponentType<{ size?: number; strokeWidth?: number; className?: string; color?: string }>;
 
 const links: { icon: IconComponent; label: string; display: string; href: string }[] = [
   {
     icon: Mail,
     label: "Email",
+    display: "devanteheywood2248@gmail.com",
+    href: "mailto:devanteheywood2248@gmail.com",
+  },
+  {
+    icon: Mail,
+    label: "Email (Penn)",
     display: "heywoodd@seas.upenn.edu",
     href: "mailto:heywoodd@seas.upenn.edu",
+  },
+  {
+    icon: SubstackIcon,
+    label: "Substack",
+    display: "Power Stack on Substack",
+    href: "https://powerstackhq.substack.com",
   },
   {
     icon: LinkedInIcon,

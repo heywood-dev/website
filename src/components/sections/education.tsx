@@ -1,11 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ImageWatermark } from "./_landmarks";
 
 export function Education() {
   return (
-    <section id="education" className="py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+    <section id="education" className="relative overflow-hidden py-24 md:py-32">
+      <ImageWatermark
+        src="/landmarks/education.png"
+        justify="end"
+        innerStyle={{ width: "min(900px, 72vw)", marginRight: "clamp(-90px, -5vw, -10px)" }}
+        imgStyle={{
+          opacity: 0.62,
+          mixBlendMode: "multiply",
+          filter: "saturate(0.72) contrast(1.02)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 64% at 62% 46%, #000 14%, rgba(0,0,0,0.4) 48%, transparent 80%)",
+          maskImage:
+            "radial-gradient(ellipse 60% 64% at 62% 46%, #000 14%, rgba(0,0,0,0.4) 48%, transparent 80%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-5xl px-6 md:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +43,7 @@ export function Education() {
             style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
           >
             University of Pennsylvania. B.S.E. Systems Engineering, concentration in
-            AI and Data Analytics. May 2026.
+            AI and Data Analytics. Class of 2026.
           </p>
         </motion.div>
       </div>

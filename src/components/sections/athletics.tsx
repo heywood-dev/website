@@ -2,11 +2,30 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { ImageWatermark } from "./_landmarks";
 
 export function Athletics() {
   return (
-    <section id="athletics" className="py-20 md:py-28">
-      <div className="mx-auto max-w-5xl px-6 md:px-12">
+    <section id="athletics" className="relative overflow-hidden py-24 md:py-32">
+      <ImageWatermark
+        src="/landmarks/athletics.png"
+        justify="end"
+        innerStyle={{
+          width: "min(1080px, 86vw)",
+          marginRight: "clamp(-120px, -6vw, -20px)",
+          marginTop: "60px",
+        }}
+        imgStyle={{
+          opacity: 0.6,
+          mixBlendMode: "multiply",
+          filter: "saturate(0.42) contrast(1.03)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 60% at 58% 44%, #000 12%, rgba(0,0,0,0.38) 46%, transparent 78%)",
+          maskImage:
+            "radial-gradient(ellipse 60% 60% at 58% 44%, #000 12%, rgba(0,0,0,0.38) 46%, transparent 78%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-5xl px-6 md:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}

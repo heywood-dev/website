@@ -12,39 +12,46 @@ interface Role {
 
 const roles: Role[] = [
   {
+    year: "2026–present",
+    title: "LiveTrends",
+    tag: "Process Automation",
+    description:
+      "Process & Automation Analyst. I map the workflows a fast-moving operation runs on, find where they break or stall, and build the automations and integrations that take the manual load off the floor.",
+  },
+  {
     year: "2023–2025",
     title: "Black Wharton Consulting",
     tag: "Strategy & Delivery",
     description:
-      "Built decision systems on top of unstructured operational data for mid-market clients and drove adoption with non-technical teams. For a Philadelphia restaurant chain running strong sales but bleeding margin, traced the problem to variable costs and in-unit waste, then shipped a weekly dashboard that surfaced where to look across locations. Across engagements: $200K in client savings, 8 to 12 percent revenue lift, and a 30 percent reduction in reporting latency.",
+      "Built decision systems on unstructured operational data for mid-market clients and drove adoption with non-technical teams. For a restaurant chain bleeding margin on strong sales, traced it to variable costs and waste and shipped a weekly dashboard showing where to look. Across engagements: $200K saved, 8–12% revenue lift, 30% less reporting latency.",
   },
   {
     year: "2024",
     title: "University of Pennsylvania Residential Operations",
     tag: "BizOps",
     description:
-      "Ran operations and data systems for a 10,000-resident population. Deployed the planning systems behind daily allocation decisions, led the cross-functional rollout including training and documentation, and redesigned KPI tracking to lift accuracy by 20 percent.",
+      "Ran operations and data systems for a 10,000-resident population. Deployed the planning tools behind daily allocation, led the cross-functional rollout, and redesigned KPI tracking to lift accuracy 20%.",
   },
   {
     year: "2021–2022",
     title: "Aureon Ventures",
     tag: "Founding",
     description:
-      "Founded and ran a logistics and tutoring business across Jamaica from zero. Owned pricing, routing, hiring, and the service workflow end to end, building pricing and routing models against real demand. Generated 3 million JMD in revenue and grew unit profitability by 25 percent.",
+      "Founded and ran a logistics and tutoring business across Jamaica from zero, owning pricing, routing, hiring, and workflow end to end. Generated 3M JMD in revenue and grew unit profitability 25%.",
   },
   {
     year: "2021–2022",
     title: "William Knibb High School",
     tag: "Coaching & Mentorship",
     description:
-      "Assistant Track and Field Coach and Mentor in Trelawny, Jamaica. Designed the training programs that lifted the school's national ranking from 40th to top 15, and worked alongside athletes on academics and placement, helping mentees secure hundreds of thousands of dollars in scholarships to universities abroad.",
+      "Assistant Track & Field Coach and Mentor in Trelawny, Jamaica. Designed the training programs that lifted the school from 40th to top 15 nationally, and helped athletes secure hundreds of thousands in scholarships abroad.",
   },
   {
     year: "2020",
     title: "Everglades Farms (CPO Office)",
     tag: "Strategy",
     description:
-      "Operations Strategy intern reporting into the Chief Product Officer. Mapped operational workflows to find breakdowns and built decision models for pricing, fulfillment, and demand that the operating team put into use.",
+      "Operations Strategy intern under the Chief Product Officer. Mapped workflows to find breakdowns and built pricing, fulfillment, and demand models the operating team put into use.",
   },
 ];
 
@@ -70,6 +77,12 @@ function RoleRow({ role }: { role: Role }) {
       layout
       variants={rowVariants}
       className="group relative"
+      style={{
+        backgroundColor: hovered
+          ? "color-mix(in srgb, var(--accent) 5%, transparent)"
+          : "transparent",
+        transition: "background-color 220ms ease",
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -111,7 +124,7 @@ function RoleRow({ role }: { role: Role }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 7 }}
             transition={{ duration: 0.42, ease: "easeOut" }}
-            className="pb-5 pl-20 text-sm leading-relaxed max-w-[60ch]"
+            className="pb-5 pl-20 pr-4 text-sm leading-relaxed max-w-3xl"
             style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
           >
             {role.description}

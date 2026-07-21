@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { useReducedMotion } from "@/hooks/use-interaction-prefs";
 import { FULLSCREEN_VS } from "./noise";
@@ -20,9 +20,12 @@ interface HeroBgBaseProps {
 export function HeroBgBase({ fragmentShader, staticBackground }: HeroBgBaseProps) {
   const mountRef = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
+  // Falls back to the static gradient if a WebGL context can't be created
+  // (headless renderers, blocked GPU, ancient devices) instead of crashing.
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
-    if (reduceMotion) return;
+    if (reduceMotion || failed) return;
 
     const el = mountRef.current;
     if (!el) return;
@@ -34,10 +37,16 @@ export function HeroBgBase({ fragmentShader, staticBackground }: HeroBgBaseProps
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
     camera.position.z = 1;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setSize(w, h);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    el.appendChild(renderer.domElement);
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      renderer.setSize(w, h);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      el.appendChild(renderer.domElement);
+    } catch {
+      setFailed(true);
+      return;
+    }
 
     const material = new THREE.ShaderMaterial({
       vertexShader: FULLSCREEN_VS,
@@ -80,21 +89,34 @@ export function HeroBgBase({ fragmentShader, staticBackground }: HeroBgBaseProps
     };
     window.addEventListener("resize", onResize);
 
+    // Pause GPU work when the hero is scrolled out of view or the tab is hidden.
+    let onScreen = true;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        onScreen = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    io.observe(el);
+
     let frame = 0;
     const startTime = performance.now();
 
     const tick = () => {
-      const t = (performance.now() - startTime) / 1000;
-      material.uniforms.time.value = t;
-      smoothMouse.lerp(targetMouse, 0.08);
-      material.uniforms.mouse.value.copy(smoothMouse);
-      renderer.render(scene, camera);
+      if (onScreen && !document.hidden) {
+        const t = (performance.now() - startTime) / 1000;
+        material.uniforms.time.value = t;
+        smoothMouse.lerp(targetMouse, 0.08);
+        material.uniforms.mouse.value.copy(smoothMouse);
+        renderer.render(scene, camera);
+      }
       frame = requestAnimationFrame(tick);
     };
     tick();
 
     return () => {
       cancelAnimationFrame(frame);
+      io.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("resize", onResize);
@@ -105,7 +127,7 @@ export function HeroBgBase({ fragmentShader, staticBackground }: HeroBgBaseProps
     };
   }, [fragmentShader, reduceMotion]);
 
-  if (reduceMotion) {
+  if (reduceMotion || failed) {
     return (
       <div
         className="absolute inset-0 pointer-events-none"

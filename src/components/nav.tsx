@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Magnetic } from "@/components/ui/magnetic";
 
@@ -9,18 +10,32 @@ const links = [
   { label: "Education",  href: "#education" },
   { label: "Experience", href: "#experience" },
   { label: "Projects",   href: "#projects" },
+  { label: "Writing",    href: "#writing" },
   { label: "Athletics",  href: "#athletics" },
   { label: "Contact",    href: "#contact" },
 ];
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+  const [navOpacity, setNavOpacity] = useState(1);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Fade the nav away as the hero scrolls past; brings it back near the top.
+    const onScroll = () => {
+      const vh = window.innerHeight || 1;
+      const y = window.scrollY;
+      const start = vh * 0.5;
+      const end = vh * 0.92;
+      const o = y <= start ? 1 : y >= end ? 0 : 1 - (y - start) / (end - start);
+      setNavOpacity(o);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -35,12 +50,18 @@ export function Nav() {
     <>
       {/* Desktop nav: plain text, no glass tint. */}
       <nav
-        className="fixed top-6 right-6 md:top-8 md:right-8 z-50 transition-opacity duration-300 hidden md:block"
-        style={{ opacity: scrolled ? 0.78 : 1 }}
-        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = "1"; }}
-        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = scrolled ? "0.78" : "1"; }}
+        className="fixed top-6 right-6 md:top-8 md:right-8 z-50 transition-opacity duration-200 hidden md:block"
+        style={{
+          opacity: navOpacity,
+          pointerEvents: navOpacity < 0.05 ? "none" : "auto",
+        }}
       >
-        <ul className="flex items-center gap-5 lg:gap-7">
+        <motion.ul
+          className="flex items-center gap-5 lg:gap-7"
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.95, duration: 0.6, ease: "easeOut" }}
+        >
           {links.map(({ label, href }) => (
             <li key={href}>
               <Magnetic strength={0.3} radius={70}>
@@ -56,7 +77,7 @@ export function Nav() {
               </Magnetic>
             </li>
           ))}
-        </ul>
+        </motion.ul>
       </nav>
 
       {/* Mobile burger button: plain, no backdrop. */}

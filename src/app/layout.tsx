@@ -15,21 +15,21 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const DESCRIPTION =
+  "Engineer, entrepreneur, and systems thinker. I'm interested in how belief shapes possibility, and how systems turn possibility into reality.";
+
 export const metadata: Metadata = {
   title: "Devanté Heywood",
-  description:
-    "Operator and systems engineer. I build operational systems that non-technical teams actually use.",
+  description: DESCRIPTION,
   openGraph: {
     title: "Devanté Heywood",
-    description:
-      "I build operational systems that non-technical teams actually use.",
+    description: DESCRIPTION,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Devanté Heywood",
-    description:
-      "I build operational systems that non-technical teams actually use.",
+    description: DESCRIPTION,
   },
 };
 

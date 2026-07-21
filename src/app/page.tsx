@@ -1,9 +1,10 @@
 import { Nav } from "@/components/nav";
-import { Hero } from "@/components/sections/hero";
+import { HeroPortrait } from "@/components/sections/hero-portrait";
 import { About } from "@/components/sections/about";
-import { Education } from "@/components/sections/education";
 import { Experience } from "@/components/sections/experience";
+import { Education } from "@/components/sections/education";
 import { Projects } from "@/components/sections/work";
+import { Writing } from "@/components/sections/writing";
 import { Athletics } from "@/components/sections/athletics";
 import { Contact } from "@/components/sections/contact";
 
@@ -12,11 +13,12 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <Hero />
+        <HeroPortrait />
         <About />
-        <Education />
         <Experience />
+        <Education />
         <Projects />
+        <Writing />
         <Athletics />
         <Contact />
         <footer
