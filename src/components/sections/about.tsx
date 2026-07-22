@@ -224,10 +224,10 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
-              I&apos;m interested in the space between an idea and the reality it
-              creates. Engineering taught me to understand how parts interact.
-              Entrepreneurship taught me to move from understanding to action. Systems
-              thinking is what connects the two.
+              I work in the space between an idea and what it becomes. Engineering
+              taught me to understand how parts interact. Entrepreneurship taught me
+              to move from understanding to action. Systems thinking is what connects
+              the two.
             </motion.p>
 
             <motion.p
