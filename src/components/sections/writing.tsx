@@ -21,6 +21,14 @@ const AMBER = "#B4661C";
 const posts: Post[] = [
   {
     date: "Jul 2026",
+    title: "2031 Is the Earliest You Can Buy a Large Gas Turbine",
+    subtitle:
+      "GE Vernova expects its gas turbine slots to be mostly sold out through 2030 by December, and the AI buildout's escape route from the grid now runs through the turbine factory.",
+    href: "https://powerstackhq.substack.com/p/2031-is-the-earliest-you-can-buy",
+    preview: "/writing/2031-is-the-earliest-you-can-buy.png",
+  },
+  {
+    date: "Jul 2026",
     title: "Who Gets to Say No to a Data Center",
     subtitle:
       "New York paused permits for 50-megawatt data centers, PJM cleared at its price ceiling and still missed its reliability target, and the buildout is already moving toward dedicated generation.",
