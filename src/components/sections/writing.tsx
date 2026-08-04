@@ -20,6 +20,14 @@ const AMBER = "#B4661C";
 
 const posts: Post[] = [
   {
+    date: "Aug 2026",
+    title: "Three Gigawatts Vanished from the Grid. The Lights Only Flickered.",
+    subtitle:
+      "A Northern Virginia transmission fault pushed data centers onto backup power. Washington is trying to assign the cost, Europe wants to price the behavior, and a federal site is planning its own generation.",
+    href: "https://powerstackhq.substack.com/p/three-gigawatts-vanished-from-the",
+    preview: "/writing/three-gigawatts-vanished-from-the.png",
+  },
+  {
     date: "Jul 2026",
     title: "2031 Is the Earliest You Can Buy a Large Gas Turbine",
     subtitle:
