@@ -21,9 +21,25 @@ const AMBER = "#B4661C";
 const posts: Post[] = [
   {
     date: "Aug 2026",
+    title: "Amazon Found a Way Around the Grid. Sort Of.",
+    subtitle:
+      "Pacifico Energy's West Texas filing shows what moving around the grid requires, while most private generation remains on paper.",
+    href: "https://powerstackhq.substack.com/p/amazon-found-a-way-around-the-grid",
+    preview: "/writing/amazon-found-a-way-around-the-grid.png",
+  },
+  {
+    date: "Aug 2026",
+    title: "Texas Was Supposed to Sort Its Data-Center Queue. Then the Questions Changed.",
+    subtitle:
+      "ERCOT missed its August deadline as Virginia and Britain raised what projects must put behind grid access.",
+    href: "https://powerstackhq.substack.com/p/texas-was-supposed-to-sort-its-data",
+    preview: "/writing/texas-was-supposed-to-sort-its-data.png",
+  },
+  {
+    date: "Aug 2026",
     title: "Three Gigawatts Vanished from the Grid. The Lights Only Flickered.",
     subtitle:
-      "A Northern Virginia transmission fault pushed data centers onto backup power. Washington is trying to assign the cost, Europe wants to price the behavior, and a federal site is planning its own generation.",
+      "A Northern Virginia transmission fault pushed data centers onto backup power. Washington is assigning the cost, Europe is pricing the behavior, and a federal site is building its own.",
     href: "https://powerstackhq.substack.com/p/three-gigawatts-vanished-from-the",
     preview: "/writing/three-gigawatts-vanished-from-the.png",
   },
