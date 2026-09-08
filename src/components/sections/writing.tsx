@@ -20,6 +20,30 @@ const AMBER = "#B4661C";
 
 const posts: Post[] = [
   {
+    date: "Sep 2026",
+    title: "\u201cDefense Platforms, Data centers, and Advanced Electronics\u201d",
+    subtitle:
+      "That is how the Pentagon described a $35.6 million mining investment made during the same week as new commitments to rare-earth supply and microreactors.",
+    href: "https://powerstackhq.substack.com/p/defense-platforms-data-centers-and",
+    preview: "/writing/defense-platforms-data-centers-and.png",
+  },
+  {
+    date: "Aug 2026",
+    title: "The 482-Megawatt Head Start",
+    subtitle:
+      "An AI campus is inheriting the grid connection of a closed aluminum smelter. It shows how the industry is beginning to work around its real constraint.",
+    href: "https://powerstackhq.substack.com/p/the-482-megawatt-head-start",
+    preview: "/writing/the-482-megawatt-head-start.png",
+  },
+  {
+    date: "Aug 2026",
+    title: "What Happens After You Find the Power?",
+    subtitle:
+      "Texas and Pennsylvania are adding a second test for AI data centers: prove the project is real, prove it can pay, and prove the community will take it.",
+    href: "https://powerstackhq.substack.com/p/what-happens-after-you-find-the-power",
+    preview: "/writing/what-happens-after-you-find-the-power.png",
+  },
+  {
     date: "Aug 2026",
     title: "Amazon Found a Way Around the Grid. Sort Of.",
     subtitle:
