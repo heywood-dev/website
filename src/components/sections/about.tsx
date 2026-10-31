@@ -239,11 +239,10 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
-              My work spans strategy, technology, automation, research, and building
-              new ventures. Across each of them, I return to the same practice:
-              understand the forces at work, decide what matters, and create structures
-              that can hold up in the real world. I care about ideas, but even more
-              about what allows them to become useful, repeatable, and lasting.
+              Today, much of my work involves tracing how work, information, and
+              decisions move across a business, and understanding what limits
+              performance. I care about ideas, but even more about what allows them to
+              become useful, repeatable, and lasting.
             </motion.p>
           </div>
         </div>
