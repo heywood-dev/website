@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 
-// TODO: update SITE_URL to your custom domain once connected in Vercel
-const SITE_URL = "https://website-beta-nine-87.vercel.app";
+const SITE_URL = "https://devanteheywood.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

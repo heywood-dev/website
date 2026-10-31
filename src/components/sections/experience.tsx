@@ -16,7 +16,7 @@ const roles: Role[] = [
     title: "LiveTrends",
     tag: "Process Automation",
     description:
-      "Process & Automation Analyst. I map the workflows a fast-moving operation runs on, find where they break or stall, and build the automations and integrations that take the manual load off the floor.",
+      "Process Automation Analyst. I work across departments to understand how the business actually operates, mapping workflows, tracing how information and decisions move, and identifying constraints that affect performance. The goal is to turn those insights into better processes, systems, and ways of working.",
   },
   {
     year: "2023–2025",
