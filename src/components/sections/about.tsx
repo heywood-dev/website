@@ -224,10 +224,10 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
-              I work in the space between an idea and what it becomes. Engineering
-              taught me to understand how parts interact. Entrepreneurship taught me
-              to move from understanding to action. Systems thinking is what connects
-              the two.
+              I&apos;m drawn to the space between an idea and what it becomes.
+              Engineering taught me to understand how parts interact. Entrepreneurship
+              taught me to move from understanding to action. Systems thinking is what
+              connects the two.
             </motion.p>
 
             <motion.p
@@ -239,10 +239,12 @@ export function About() {
               className="text-base md:text-lg leading-[1.75]"
               style={{ fontFamily: "var(--font-sans)", color: "var(--foreground)" }}
             >
-              Today, much of my work involves tracing how work, information, and
-              decisions move across a business, and understanding what limits
-              performance. I care about ideas, but even more about what allows them to
-              become useful, repeatable, and lasting.
+              My interests begin with understanding: how people think, how
+              organizations work, and how decisions shape what becomes possible. I try
+              to notice what isn&apos;t immediately obvious, question my assumptions,
+              and understand a situation before deciding how to act. I care about
+              ideas, but even more about what allows them to become useful,
+              repeatable, and lasting.
             </motion.p>
           </div>
         </div>
